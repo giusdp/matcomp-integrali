@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8181,        208]
+NotebookOptionsPosition[      7299,        182]
+NotebookOutlinePosition[      7792,        203]
+CellTagsIndexPosition[      7729,        198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"ToExpression", "[", 
+      RowBox[{"function", ",", " ", "TraditionalForm"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", 
+       RowBox[{"xrange", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+       RowBox[{"xrange", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", "\n", "   ", 
+     RowBox[{"PlotRange", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"yrange", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+        RowBox[{"yrange", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], ",", " ", 
+     RowBox[{"PlotStyle", " ", "->", " ", "Green"}], ",", " ", 
+     RowBox[{"AspectRatio", " ", "->", " ", "1"}], ",", " ", 
+     RowBox[{"Frame", " ", "->", " ", "True"}], ",", " ", 
+     RowBox[{"Axes", " ", "->", " ", "True"}], ",", " ", "\n", "   ", 
+     RowBox[{"AxesOrigin", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", " ", 
+     RowBox[{"GridLines", " ", "->", " ", "Automatic"}], ",", " ", 
+     RowBox[{"ImageSize", " ", "->", " ", "508"}]}], "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "function", ",", " ", "\"\<3x\>\"", ",", " ", "\"\<Function\>\""}], 
+      "}"}], ",", " ", "\n", "   ", 
+     RowBox[{
+      RowBox[{"InputField", "[", 
+       RowBox[{"#1", ",", " ", "String"}], "]"}], " ", "&"}]}], " ", "}"}], 
+   ",", " ", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", 
+     RowBox[{"Spacer", "[", 
+      RowBox[{"{", 
+       RowBox[{"20", ",", " ", "5"}], "}"}], "]"}], "}"}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.733425976200657*^9},ExpressionUUID->"8fded47a-b7c6-4cf6-a166-\
+fcacd1961d86"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`function$$ = "", Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`function$$], "3x", "Function"}, 
+      InputField[#, String]& }, {
+      Hold[
+       Row[{
+         Spacer[{20, 5}]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {508., {247., 253.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`function$$ = "3x"}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        ToExpression[$CellContext`function$$, 
+         TraditionalForm], {$CellContext`x, 
+         Part[$CellContext`xrange, 1], 
+         Part[$CellContext`xrange, 2]}, PlotRange -> {
+          Part[$CellContext`yrange, 1], 
+          Part[$CellContext`yrange, 2]}, PlotStyle -> Green, AspectRatio -> 1,
+         Frame -> True, Axes -> True, AxesOrigin -> {0, 0}, GridLines -> 
+        Automatic, ImageSize -> 508], 
+      "Specifications" :> {{{$CellContext`function$$, "3x", "Function"}, 
+         InputField[#, String]& }, 
+        Row[{
+          Spacer[{20, 5}]}]}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{559., {297., 304.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Input",
+ CellChangeTimes->{
+  3.7334261883540263`*^9},ExpressionUUID->"74f5df63-229a-47f6-8eec-\
+ddafaadb5bdb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`function$$ = "", Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`function$$], "NIntegrate[1/x Cos[Log[x]/x],{x,0,1}]",
+        "Function"}, InputField[#, String]& }, {
+      Hold[
+       Row[{
+         Spacer[{20, 5}]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {508., {247., 253.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`function$$ = 
+        "NIntegrate[1/x Cos[Log[x]/x],{x,0,1}]"}, "ControllerVariables" :> {},
+       "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        ToExpression[$CellContext`function$$, 
+         TraditionalForm], {$CellContext`x, 
+         Part[$CellContext`xrange, 1], 
+         Part[$CellContext`xrange, 2]}, PlotRange -> {
+          Part[$CellContext`yrange, 1], 
+          Part[$CellContext`yrange, 2]}, PlotStyle -> Green, AspectRatio -> 1,
+         Frame -> True, Axes -> True, AxesOrigin -> {0, 0}, GridLines -> 
+        Automatic, ImageSize -> 508], 
+      "Specifications" :> {{{$CellContext`function$$, 
+          "NIntegrate[1/x Cos[Log[x]/x],{x,0,1}]", "Function"}, 
+         InputField[#, String]& }, 
+        Row[{
+          Spacer[{20, 5}]}]}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{559., {297., 304.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.733426195975037*^9, 3.7334262439361043`*^9},
+ CellTags->"2",ExpressionUUID->"2a92c688-2552-46e5-8464-25ed33ca1646"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.733426189724028*^9, {3.7334266437644515`*^9, 
+   3.7334266474386525`*^9}},ExpressionUUID->"70486fc6-efe9-4189-9e5e-\
+e5c12171e35e"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.7334266508308444`*^9, 3.7334266520189056`*^9}, 
+   3.733427082401908*^9},ExpressionUUID->"20d3b456-6672-4c8d-bbc7-\
+6a2d70cd6cce"]
+},
+WindowSize->{1584, 818},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "2"->{
+  Cell[4574, 120, 2342, 48, 620, "Output",ExpressionUUID->"2a92c688-2552-46e5-8464-25ed33ca1646",
+   CellTags->"2"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"2", 7588, 192}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1806, 47, 86, "Input",ExpressionUUID->"8fded47a-b7c6-4cf6-a166-fcacd1961d86"],
+Cell[CellGroupData[{
+Cell[2389, 71, 2182, 47, 616, InheritFromParent,ExpressionUUID->"74f5df63-229a-47f6-8eec-ddafaadb5bdb"],
+Cell[4574, 120, 2342, 48, 620, "Output",ExpressionUUID->"2a92c688-2552-46e5-8464-25ed33ca1646",
+ CellTags->"2"]
+}, Open  ]],
+Cell[6931, 171, 182, 4, 28, "Input",ExpressionUUID->"70486fc6-efe9-4189-9e5e-e5c12171e35e"],
+Cell[7116, 177, 179, 3, 28, "Input",ExpressionUUID->"20d3b456-6672-4c8d-bbc7-6a2d70cd6cce"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
