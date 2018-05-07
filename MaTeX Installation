@@ -1,0 +1,4 @@
+
+<<["PacletManager`"];
+PacletInstall["MaTeX-1.7.3.paclet"];
+<<["MaTeX`];
