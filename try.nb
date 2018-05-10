@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13082,        330]
-NotebookOptionsPosition[     12258,        309]
-NotebookOutlinePosition[     12619,        325]
-CellTagsIndexPosition[     12576,        322]
+NotebookDataLength[     18378,        468]
+NotebookOptionsPosition[     16690,        433]
+NotebookOutlinePosition[     17048,        449]
+CellTagsIndexPosition[     17005,        446]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -84,6 +84,7 @@ Cell[BoxData[
         RowBox[{
         "{", "\"\<IndefiniteIntegral__Step-by-step solution\>\"", "}"}]}]}], 
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"singlePopup", "[", "pw_", "]"}], ":=", 
     RowBox[{"With", "[", 
@@ -133,11 +134,47 @@ Cell[BoxData[
        RowBox[{"Modal", "\[Rule]", "True"}]}], "]"}]}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
+    RowBox[{
+     RowBox[{"fb", "[", "aa_", "]"}], ":=", 
+     RowBox[{"CreateDialog", "[", 
+      RowBox[{
+       RowBox[{"Pane", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Column", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"WolframAlpha", "[", 
+             RowBox[{"aa", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"\"\<Input\>\"", ",", "2"}], "}"}], ",", 
+                "\"\<Content\>\""}], "}"}], ",", 
+              RowBox[{"PodStates", "\[Rule]", 
+               RowBox[{"{", "\"\<Input__Step-by-step solution\>\"", "}"}]}]}],
+              "]"}], ",", 
+            RowBox[{"DefaultButton", "[", 
+             RowBox[{"\"\<Close\>\"", ",", 
+              RowBox[{"DialogReturn", "[", "]"}]}], "]"}]}], "}"}], "]"}], 
+         ",", " ", 
+         RowBox[{"Scrollbars", " ", "\[Rule]", " ", "True"}]}], "]"}], ",", 
+       " ", 
+       RowBox[{"Modal", " ", "\[Rule]", " ", "True"}]}], "]"}]}], " ", ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{"b2", " ", "=", " ", 
      RowBox[{"Button", "[", 
-      RowBox[{"\"\<Click Here\>\"", ",", " ", 
+      RowBox[{"\"\<Click Here IND\>\"", ",", " ", 
        RowBox[{"Print", "[", 
         RowBox[{"ff", "[", "stringa", "]"}], "]"}], ",", " ", 
+       RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b3", " ", "=", "  ", 
+     RowBox[{"Button", "[", 
+      RowBox[{"\"\<Click Here DEF\>\"", ",", " ", 
+       RowBox[{"Print", "[", 
+        RowBox[{"fb", "[", "stringa", "]"}], "]"}], ",", " ", 
        RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
@@ -147,7 +184,7 @@ Cell[BoxData[
     RowBox[{"InputField", "[", 
      RowBox[{
       RowBox[{"Dynamic", "[", "stringa", "]"}], ",", " ", "String"}], "]"}]}],
-    "\n", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", " ", 
     RowBox[{
     "vedere", " ", "come", "  ", "passare", " ", "la", " ", "stringa", " ", 
@@ -225,7 +262,8 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"PopupWindow", "[", 
      RowBox[{"\"\<Click here\>\"", ",", "b1"}], "]"}], "//", "singlePopup"}], 
-   " ", "\[IndentingNewLine]", "\[IndentingNewLine]", "b2"}]}]], "Input",
+   " ", "\[IndentingNewLine]", "\[IndentingNewLine]", "b2", 
+   "\[IndentingNewLine]", "b3"}]}]], "Input",
  CellChangeTimes->{{3.7348790333754272`*^9, 3.734879078451928*^9}, {
    3.7348791375648127`*^9, 3.73487917076544*^9}, {3.7348792297356653`*^9, 
    3.73487923395119*^9}, {3.734879273012464*^9, 3.734879310273402*^9}, {
@@ -250,14 +288,18 @@ Cell[BoxData[
    3.734883298829834*^9, 3.734883299194689*^9}, {3.734883375647222*^9, 
    3.734883379598093*^9}, {3.734883932651311*^9, 3.734883976136091*^9}, {
    3.734884047839959*^9, 3.734884048693803*^9}, {3.7348845812487783`*^9, 
-   3.7348847956820383`*^9}, {3.734884829968174*^9, 
-   3.7348848304200687`*^9}},ExpressionUUID->"cb2726b9-2f7a-46c7-beeb-\
+   3.7348847956820383`*^9}, {3.734884829968174*^9, 3.7348848304200687`*^9}, {
+   3.734949028996666*^9, 3.734949041097866*^9}, {3.7349491151787443`*^9, 
+   3.734949197593541*^9}, {3.734949387372548*^9, 3.734949397591095*^9}, {
+   3.734949684562357*^9, 3.734949697723283*^9}, {3.7349498963766203`*^9, 
+   3.734949950993703*^9}},ExpressionUUID->"cb2726b9-2f7a-46c7-beeb-\
 bbbe88e490c1"],
 
 Cell[BoxData[
  InputFieldBox[Dynamic[$CellContext`stringa], String]], "Output",
  CellChangeTimes->{
-  3.73488483829109*^9},ExpressionUUID->"9ef77022-c073-4d23-88ba-f08708bb7a19"],
+  3.734949981084394*^9},ExpressionUUID->"1974acd3-b850-4e31-9ca5-\
+2616b790d100"],
 
 Cell[BoxData[
  ButtonBox["\<\"Click here\"\>",
@@ -266,9 +308,9 @@ Cell[BoxData[
   ButtonFunction:>If[
     Or[
      Not[
-      ValueQ[$CellContext`popup27]], 
-     NotebookInformation[$CellContext`popup27] == $Failed], \
-$CellContext`popup27 = CreateDocument[
+      ValueQ[$CellContext`popup12]], 
+     NotebookInformation[$CellContext`popup12] == $Failed], \
+$CellContext`popup12 = CreateDocument[
       Internal`PopupWindowNotebook[
        Button["Click Here", 
         Print[
@@ -278,28 +320,110 @@ $CellContext`popup27 = CreateDocument[
   Evaluator->Automatic,
   Method->"Preemptive"]], "Output",
  CellChangeTimes->{
-  3.7348848383020887`*^9},ExpressionUUID->"d3f968f2-cce3-4a43-9d07-\
-e499020f930e"],
+  3.734949981094853*^9},ExpressionUUID->"fa7e07b2-24bf-4f64-8e9d-\
+6000ef61efdc"],
 
 Cell[BoxData[
- ButtonBox["\<\"Click Here\"\>",
+ ButtonBox["\<\"Click Here IND\"\>",
   Appearance->Automatic,
   ButtonFunction:>Print[
     $CellContext`ff[$CellContext`stringa]],
   Evaluator->Automatic,
   Method->"Queued"]], "Output",
  CellChangeTimes->{
-  3.734884838314802*^9},ExpressionUUID->"870e9e72-5873-42b1-b0c5-\
-2e1e3092e2ad"],
+  3.7349499811054564`*^9},ExpressionUUID->"f7aa4e7c-f734-4591-a7b6-\
+4e293abd3e40"],
+
+Cell[BoxData[
+ ButtonBox["\<\"Click Here DEF\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>Print[
+    $CellContext`fb[$CellContext`stringa]],
+  Evaluator->Automatic,
+  Method->"Queued"]], "Output",
+ CellChangeTimes->{
+  3.734949981115547*^9},ExpressionUUID->"85291f81-1be2-4af9-91d8-\
+72b11ad85e8e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "WolframAlpha","string",
+   "\"String expected at position \\!\\(\\*RowBox[{\\\"1\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"WolframAlpha\\\", \\\"[\\\", \
+RowBox[{InputFieldBox[Dynamic[stringa], String], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"Input\\\\\\\
+\"\\\", \\\",\\\", \\\"2\\\"}], \\\"}\\\"}], \\\",\\\", \\\"\\\\\\\"Content\\\
+\\\\\"\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"PodStates\\\", \
+\\\"\[Rule]\\\", RowBox[{\\\"{\\\", \\\"\\\\\\\"Input__Step-by-step \
+solution\\\\\\\"\\\", \\\"}\\\"}]}]}], \\\"]\\\"}]\\).\"",2,26,1,
+   19174543718900608456,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.734949982727247*^9},ExpressionUUID->"9aeabcf1-cbd6-4a0b-8045-\
+3668dfa5c522"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  TemplateBox[{FrontEndObject[
-    LinkObject["7p386_shm", 3, 1]],43,
-   "FrontEndObject[LinkObject[\"7p386_shm\", 3, 1]]","43","43"},
+    LinkObject["cmjrc_shm", 3, 1]],19,
+   "FrontEndObject[LinkObject[\"cmjrc_shm\", 3, 1]]","19","19"},
   "NotebookObjectUnsaved"]], "Print",
  CellChangeTimes->{
-  3.734884849131291*^9},ExpressionUUID->"cc7b1cfe-9c2c-409e-8512-\
-ebc42d1db724"]
+  3.734949983033251*^9},ExpressionUUID->"31b40c36-545b-4ab3-a434-\
+7cffe6236e28"],
+
+Cell[BoxData[
+ TemplateBox[{FrontEndObject[
+    LinkObject["cmjrc_shm", 3, 1]],21,
+   "FrontEndObject[LinkObject[\"cmjrc_shm\", 3, 1]]","21","21"},
+  "NotebookObjectUnsaved"]], "Print",
+ CellChangeTimes->{
+  3.734949992344665*^9},ExpressionUUID->"5aca786c-fe96-48c7-a160-\
+3569cc43988d"],
+
+Cell[BoxData[
+ TemplateBox[{FrontEndObject[
+    LinkObject["cmjrc_shm", 3, 1]],23,
+   "FrontEndObject[LinkObject[\"cmjrc_shm\", 3, 1]]","23","23"},
+  "NotebookObjectUnsaved"]], "Print",
+ CellChangeTimes->{
+  3.734950029340406*^9},ExpressionUUID->"8347fbb4-7f46-482b-9b6b-\
+8a05744271cf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InputFieldBox[Dynamic[$CellContext`stringa], String]], "Input",
+ CellChangeTimes->{
+  3.734949973769899*^9},ExpressionUUID->"217d8c41-2b04-4fa3-8468-\
+1d9a59cd5db6"],
+
+Cell[BoxData[
+ InputFieldBox[Dynamic[$CellContext`stringa], String]], "Output",
+ CellChangeTimes->{
+  3.734949416480493*^9, 3.734949706145632*^9, {3.734949956441678*^9, 
+   3.7349499738751097`*^9}},ExpressionUUID->"13f5746c-5c89-45f0-b935-\
+441c46bede5f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InputFieldBox[Dynamic[$CellContext`stringa], String]], "Input",
+ CellChangeTimes->{
+  3.734949411041952*^9},ExpressionUUID->"33f69355-8f32-485c-8c74-\
+ffd98af6e310"],
+
+Cell[BoxData[
+ InputFieldBox[Dynamic[$CellContext`stringa], String]], "Output",
+ CellChangeTimes->{
+  3.73488483829109*^9, {3.734949179927156*^9, 3.734949198999427*^9}, {
+   3.734949399410596*^9, 
+   3.734949411141568*^9}},ExpressionUUID->"1fb44c46-1654-400b-abc1-\
+52a6fa733ae3"]
 }, Open  ]],
 
 Cell[BoxData["  "], "Input",
@@ -308,7 +432,7 @@ Cell[BoxData["  "], "Input",
 ed14dd70d1d8"]
 },
 WindowSize->{808, 656},
-WindowMargins->{{-936, Automatic}, {25, Automatic}},
+WindowMargins->{{0, Automatic}, {25, Automatic}},
 FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 10, 2017)",
 StyleDefinitions->"Default.nb"
@@ -325,13 +449,27 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 10094, 232, 1144, "Input",ExpressionUUID->"cb2726b9-2f7a-46c7-beeb-bbbe88e490c1"],
-Cell[10677, 256, 178, 3, 44, "Output",ExpressionUUID->"9ef77022-c073-4d23-88ba-f08708bb7a19"],
-Cell[10858, 261, 635, 20, 36, "Output",ExpressionUUID->"d3f968f2-cce3-4a43-9d07-e499020f930e"],
-Cell[11496, 283, 298, 9, 45, "Output",ExpressionUUID->"870e9e72-5873-42b1-b0c5-2e1e3092e2ad"],
-Cell[11797, 294, 287, 7, 34, "Print",ExpressionUUID->"cc7b1cfe-9c2c-409e-8512-ebc42d1db724"]
+Cell[580, 22, 11844, 273, 1333, "Input",ExpressionUUID->"cb2726b9-2f7a-46c7-beeb-bbbe88e490c1"],
+Cell[12427, 297, 181, 4, 78, "Output",ExpressionUUID->"1974acd3-b850-4e31-9ca5-2616b790d100"],
+Cell[12611, 303, 633, 20, 36, "Output",ExpressionUUID->"fa7e07b2-24bf-4f64-8e9d-6000ef61efdc"],
+Cell[13247, 325, 304, 9, 45, "Output",ExpressionUUID->"f7aa4e7c-f734-4591-a7b6-4e293abd3e40"],
+Cell[13554, 336, 302, 9, 45, "Output",ExpressionUUID->"85291f81-1be2-4af9-91d8-72b11ad85e8e"],
+Cell[13859, 347, 778, 15, 57, "Message",ExpressionUUID->"9aeabcf1-cbd6-4a0b-8045-3668dfa5c522"],
+Cell[CellGroupData[{
+Cell[14662, 366, 287, 7, 34, "Print",ExpressionUUID->"31b40c36-545b-4ab3-a434-7cffe6236e28"],
+Cell[14952, 375, 287, 7, 34, "Print",ExpressionUUID->"5aca786c-fe96-48c7-a160-3569cc43988d"],
+Cell[15242, 384, 287, 7, 34, "Print",ExpressionUUID->"8347fbb4-7f46-482b-9b6b-8a05744271cf"]
+}, Open  ]]
 }, Open  ]],
-Cell[12099, 304, 155, 3, 30, "Input",ExpressionUUID->"b8f26b4c-f58d-4ce7-9e53-ed14dd70d1d8"]
+Cell[CellGroupData[{
+Cell[15578, 397, 180, 4, 40, InheritFromParent,ExpressionUUID->"217d8c41-2b04-4fa3-8468-1d9a59cd5db6"],
+Cell[15761, 403, 255, 5, 44, "Output",ExpressionUUID->"13f5746c-5c89-45f0-b935-441c46bede5f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16053, 413, 180, 4, 40, "Input",ExpressionUUID->"33f69355-8f32-485c-8c74-ffd98af6e310"],
+Cell[16236, 419, 280, 6, 44, "Output",ExpressionUUID->"1fb44c46-1654-400b-abc1-52a6fa733ae3"]
+}, Open  ]],
+Cell[16531, 428, 155, 3, 30, "Input",ExpressionUUID->"b8f26b4c-f58d-4ce7-9e53-ed14dd70d1d8"]
 }
 ]
 *)
