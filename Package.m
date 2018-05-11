@@ -5,6 +5,10 @@ BeginPackage["Funzioni`"]
 Unprotect@@Names["Funzioni`*"];
 ClearAll@@Names["Funzioni`*"];
 
+Needs["PacletManager`"];
+PacletInstall["MaTeX-1.7.3.paclet"];
+Needs["MaTeX`"];
+
 walkD::usage = "walkD[f,x]"
 walkInt::usage = "walkInt[f,x]"
 
