@@ -4,10 +4,35 @@
 BeginPackage["Funzioni`"]
 Unprotect@@Names["Funzioni`*"];
 ClearAll@@Names["Funzioni`*"];
+(*
+updateMaTeX[] :=
+  Module[{json, download, target},
+    Check[
+      json = Import["https://api.github.com/repos/szhorvat/MaTeX/releases/latest", "JSON"];
+      download = Lookup[First@Lookup[json, "assets"], "browser_download_url"];
+      target = FileNameJoin[{CreateDirectory[], "MaTeX.paclet"}];
+      If[$Notebooks,
+        PrintTemporary@Labeled[ProgressIndicator[Appearance -> "Necklace"], "Downloading...", Right],
+        Print["Downloading..."]
+      ];
+      URLSave[download, target]
+      ,
+      Return[$Failed]
+    ];
+    If[FileExistsQ[target], PacletManager`PacletInstall[target], $Failed]
+  ]
 
-Needs["PacletManager`"];
-PacletInstall["MaTeX-1.7.3.paclet"];
-Needs["MaTeX`"];
+updateMaTeX[]
+*)
+Needs["PacletManager`"]
+PacletInstall["~/MaTeX-1.7.3.paclet", IgnoreVersion->True]
+Needs["MaTeX`"]
+ConfigureMaTeX[
+ "pdfLaTeX" -> "/usr/bin/pdflatex", 
+ "Ghostscript" -> "/usr/bin/ghostscript", "CacheSize" -> 100, "WorkingDirectory" -> Automatic
+ ]
+
+
 
 walkD::usage = "walkD[f,x]"
 walkInt::usage = "walkInt[f,x]"

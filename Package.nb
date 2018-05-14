@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     33085,        940]
-NotebookOptionsPosition[     32770,        926]
-NotebookOutlinePosition[     33129,        942]
-CellTagsIndexPosition[     33086,        939]
+NotebookDataLength[     36698,       1014]
+NotebookOptionsPosition[     35708,        992]
+NotebookOutlinePosition[     36042,       1007]
+CellTagsIndexPosition[     35999,       1004]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"BeginPackage", "[", "\"\<Funzioni`\>\"", 
   "]"}], "\[LineSeparator]", 
@@ -34,9 +36,22 @@ Cell[BoxData[{
   RowBox[{"walkD", "::", "usage"}], " ", "=", " ", 
   "\"\<walkD[f,x]\>\""}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"walkInt", "::", "usage"}], " ", "=", " ", 
-   "\"\<walkInt[f,x]\>\""}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  RowBox[{"walkInt", "::", "usage"}], " ", "=", " ", 
+  "\"\<walkInt[f,x]\>\""}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<PacletManager`\>\"", "]"}], "\n", 
+ RowBox[{"PacletInstall", "[", 
+  RowBox[{"\"\<~/MaTeX-1.7.3.paclet\>\"", ",", " ", 
+   RowBox[{"IgnoreVersion", "\[Rule]", "True"}]}], "]"}], "\n", 
+ RowBox[{"Needs", "[", "\"\<MaTeX`\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"ConfigureMaTeX", "[", 
+   RowBox[{
+    RowBox[{"\"\<pdfLaTeX\>\"", "\[Rule]", "\"\</usr/bin/pdflatex\>\""}], ",", 
+    RowBox[{
+    "\"\<Ghostscript\>\"", "\[Rule]", "\"\</usr/bin/ghostscript\>\""}], ",", 
+    RowBox[{"\"\<CacheSize\>\"", "\[Rule]", "100"}], ",", 
+    RowBox[{"\"\<WorkingDirectory\>\"", "\[Rule]", "Automatic"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], 
   "\[LineSeparator]"}], "\[IndentingNewLine]", 
@@ -412,7 +427,7 @@ Cell[BoxData[{
        "\[IndentingNewLine]", 
        RowBox[{"D", "[", 
         RowBox[{"f", ",", "x"}], "]"}]}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -921,13 +936,63 @@ Cell[BoxData[{
   3.733112432863594*^9, 3.733112441676694*^9}, {3.733112657531783*^9, 
   3.733112704676578*^9}, {3.733112781206064*^9, 3.733112807842381*^9}, {
   3.7331128462946777`*^9, 3.7331128490677233`*^9}, {3.733112914883314*^9, 
-  3.7331129576343117`*^9}},ExpressionUUID->"4c858c4e-66c8-48aa-b47e-\
-cfb656be6993"]
+  3.7331129576343117`*^9}, {3.735136801092846*^9, 3.7351368189864893`*^9}, {
+  3.7351371137476997`*^9, 3.735137132906333*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"4c858c4e-66c8-48aa-b47e-cfb656be6993"],
+
+Cell[BoxData["\<\"Funzioni`\"\>"], "Output",
+ CellChangeTimes->{3.7351371349575567`*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"5be4d749-cd2d-401c-8808-d3fe448de2a9"],
+
+Cell[BoxData["\<\"walkD[f,x]\"\>"], "Output",
+ CellChangeTimes->{3.7351371349592667`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"d27ed5fc-8a70-4a33-9259-bc820c35ee8c"],
+
+Cell[BoxData["\<\"walkInt[f,x]\"\>"], "Output",
+ CellChangeTimes->{3.73513713496239*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"190fc035-8d8c-4fb3-b982-3a3694f468bb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+  "Paclet", "[", "\<\"MaTeX\"\>", ",", "\<\"1.7.3\"\>", ",", "<>", "]"}],
+  PacletManager`Paclet[
+  "Name" -> "MaTeX", "Version" -> "1.7.3", "MathematicaVersion" -> "10.0+", 
+   "Description" -> "Create LaTeX-typeset labels within Mathematica.", 
+   "Creator" -> "Szabolcs Horv\[AAcute]t <szhorvat@gmail.com>", "URL" -> 
+   "http://szhorvat.net/mathematica/MaTeX", "Thumbnail" -> "Logo.png", 
+   "Extensions" -> {{
+     "Documentation", "Language" -> All, "MainPage" -> "Guides/MaTeX"}, {
+     "Kernel", "Root" -> ".", "Context" -> "MaTeX`"}}, "Location" -> 
+   "/home/yoda/.Mathematica/Paclets/Repository/MaTeX-1.7.3"]]], "Output",
+ CellChangeTimes->{3.735137135233477*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"a4f83dee-b2b4-423a-88a5-d070977566dc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"pdfLaTeX\"\>", "\[Rule]", "\<\"/usr/bin/pdflatex\"\>"}], ",", 
+   
+   RowBox[{"\<\"Ghostscript\"\>", "\[Rule]", "\<\"/usr/bin/ghostscript\"\>"}],
+    ",", 
+   RowBox[{"\<\"CacheSize\"\>", "\[Rule]", "100"}], ",", 
+   RowBox[{"\<\"WorkingDirectory\"\>", "\[Rule]", "Automatic"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.735137136185792*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"bd06f6db-a8be-4533-8ae0-724d8031c335"],
+
+Cell[BoxData["\<\"Funzioni`Private`\"\>"], "Output",
+ CellChangeTimes->{3.73513713618956*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"ca2d1d8d-ca4c-4897-8951-94575ee967fb"],
+
+Cell[BoxData["\<\"Funzioni`Private`\"\>"], "Output",
+ CellChangeTimes->{3.7351371362349453`*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"c5fba4e7-b2f7-468f-b13e-dbb2d6340a19"]
+}, Open  ]]
 },
 WindowSize->{808, 622},
-WindowMargins->{{20, Automatic}, {56, Automatic}},
-FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
-10, 2017)",
+WindowMargins->{{314, Automatic}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -941,10 +1006,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 32208, 904, 3145, "Input",ExpressionUUID->"4c858c4e-66c8-48aa-b47e-cfb656be6993"]
+Cell[CellGroupData[{
+Cell[580, 22, 32971, 918, 3649, "Input",ExpressionUUID->"4c858c4e-66c8-48aa-b47e-cfb656be6993"],
+Cell[33554, 942, 166, 2, 35, "Output",ExpressionUUID->"5be4d749-cd2d-401c-8808-d3fe448de2a9"],
+Cell[33723, 946, 167, 2, 35, "Output",ExpressionUUID->"d27ed5fc-8a70-4a33-9259-bc820c35ee8c"],
+Cell[33893, 950, 166, 2, 35, "Output",ExpressionUUID->"190fc035-8d8c-4fb3-b982-3a3694f468bb"],
+Cell[34062, 954, 797, 14, 35, "Output",ExpressionUUID->"a4f83dee-b2b4-423a-88a5-d070977566dc"],
+Cell[34862, 970, 477, 11, 59, "Output",ExpressionUUID->"bd06f6db-a8be-4533-8ae0-724d8031c335"],
+Cell[35342, 983, 172, 2, 35, "Output",ExpressionUUID->"ca2d1d8d-ca4c-4897-8951-94575ee967fb"],
+Cell[35517, 987, 175, 2, 92, "Output",ExpressionUUID->"c5fba4e7-b2f7-468f-b13e-dbb2d6340a19"]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
