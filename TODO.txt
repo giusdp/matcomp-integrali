@@ -1,0 +1,24 @@
+ to do///
+1. aggiungere gli import di matex dove manca (x)
+2. magnification 3 (x)
+3. aggiungere i tag agli altri slide
+4. cambiare gli imagini con le formule in latex (x)
+5. aggiungere i tasti e linkare
+6. finire l'indice dei metodi
+7. aggiungere gli esercizi con le soluzioni guidate
+8. aggiungere gli esercizi senza soluzioni
+9. aggiungere gli audio a ogni slide 
+10. aggingere i video 
+11. aggingere i tasti per mostrare elenco esercizi e tablla formule
+
+...................
+cosi finiamo il punto .nb
+...................
+1. spostare il codice dei grafici in funzioni nel .m
+2. quiz esercizi 
+
+
+**************************************
+TODO
+**************************************
+1. slide 17 da fare la soluzione guidata
