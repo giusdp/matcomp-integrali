@@ -1,7 +1,7 @@
  to do///
 1. aggiungere gli import di matex dove manca (x)
 2. magnification 3 (x)
-3. aggiungere i tag agli altri slide
+3. aggiungere i tag agli altri slide (x)
 4. cambiare gli imagini con le formule in latex (x)
 5. aggiungere i tasti e linkare
 6. finire l'indice dei metodi
