@@ -25,7 +25,7 @@ updateMaTeX[] :=
 updateMaTeX[]
 *)
 Needs["PacletManager`"]
-PacletInstall["~/MaTeX-1.7.3.paclet", IgnoreVersion->True]
+PacletInstall["MaTeX-1.7.3.paclet", IgnoreVersion->True]
 Needs["MaTeX`"]
 ConfigureMaTeX[
  "pdfLaTeX" -> "/usr/bin/pdflatex", 

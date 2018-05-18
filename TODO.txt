@@ -3,8 +3,8 @@
 2. magnification 3 (x)
 3. aggiungere i tag agli altri slide (x)
 4. cambiare gli imagini con le formule in latex (x)
-5. aggiungere i tasti e linkare
-6. finire l'indice dei metodi
+5. aggiungere i tasti e linkare (x)
+6. finire l'indice dei metodi (x)
 7. aggiungere gli esercizi con le soluzioni guidate
 8. aggiungere gli esercizi senza soluzioni
 9. aggiungere gli audio a ogni slide 
