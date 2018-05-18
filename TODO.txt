@@ -5,8 +5,10 @@
 4. cambiare gli imagini con le formule in latex (x)
 5. aggiungere i tasti e linkare (x)
 6. finire l'indice dei metodi (x)
+
 7. aggiungere gli esercizi con le soluzioni guidate
 8. aggiungere gli esercizi senza soluzioni
+
 9. aggiungere gli audio a ogni slide 
 10. aggingere i video 
 11. aggingere i tasti per mostrare elenco esercizi e tablla formule
