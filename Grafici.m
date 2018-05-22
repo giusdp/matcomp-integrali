@@ -18,21 +18,21 @@ f[x_]:=Log[x]
 
 (* costruisco i grafi in tre passi diversi *)
 
-plot0=Plot[f[x], {x, 1, 10}, AxesOrigin->{0,0},PlotLabel->Style[Framed["Fig.1: Funzione logaritmica f(x) =" Log[x]], 22, Bold, Blue, Background->Lighter[Pink]], AxesLabel->Automatic];
+plot0=Plot[f[x], {x, 1, 10}, AxesOrigin->{0,0},PlotLabel->Style[Framed["Fig.1: Funzione logaritmica f(x) =" Log[x]], 22, Bold, Blue, Background->Lighter[Pink]], AxesLabel->Automatic, Ticks->None];
 plot0; 
 (* la funzione logaritmica nel intervalo [0, 10]*)
 
 plot1=Plot[f[x], {x, 1, 10}, AxesOrigin->{0,0}, Filling->Axis, PlotLabel->Style[Framed["Fig.2: Area sotto la curva di funzione f(x) =" Log[x]], 22, Bold, Blue, Background->Lighter[Pink]], 
-GridLines->{{{2, Blue}, {8, Blue}}, None}, PlotRange -> {{0, 10}, All}, AxesLabel->Automatic];
+GridLines->{{{2, Blue}, {8, Blue}}, None}, PlotRange -> {{0, 10}, All}, AxesLabel->Automatic, Ticks->None];
 Show[plot1, txt];
 (* la funzione e i punti x=a e x=b *)
 
 plot2=Plot[f[x], {x, 2, 8}, AxesOrigin->{0,0}, Filling->Axis, PlotLabel->Style[Framed["Fig.3: Area delimitata da f(x) = log(x), x1 = a e x2 = b"], 22, Bold, Blue, Background->Lighter[Pink]], 
 
-PlotRange -> {{0, 10}, All}, AxesLabel->Automatic];
+PlotRange -> {{0, 10}, All}, AxesLabel->Automatic, Ticks->None];
 
 (* visualizza i tre grafici creati prima in una unica riga utilizzando GraphicsRow*)
-grafico1 = GraphicsRow[{plot0, Show[plot1, txt], Show[plot2,txt]}, ImageSize->Full]
+grafico1 = GraphicsRow[{plot0, Show[plot1, txt], Show[plot2,txt]}, ImageSize->Full];
 
 (* ********************************************************************************* *)
 
@@ -51,16 +51,16 @@ funlim2 = 6;
 (* definizione della funzione costante f(x)=4 *)
 f[x_]:=4
 (* creazione delle plot per il primo e il secondo grafico*)
-plot3=Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.4: Funzione costante f(x) = 4"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic];
+plot3=Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.4: Funzione costante f(x) = 4"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic, AspectRatio->1, Ticks->{{1, 3},{0, 4}}, TicksStyle->Directive[Black, 20]];
 plot4=Plot[y=4, {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.5: Area sotto la funzione costante f(x) = 4"], 22, Bold, Blue, Background->Lighter[Pink]], Filling->Axis, GridLines->{{{1, Blue}, {3, Blue}}, None},
-AxesOrigin->{0,0}, AxesLabel->Automatic];
+AxesOrigin->{0,0}, AxesLabel->Automatic, AspectRatio->1, Ticks->{{1, 3},{0, 4}}, TicksStyle->Directive[Black, 20]];
 (* limiti dell'area da calcolare *)
 inlimit1 = 1;
 inlimit2 = 3;
 (* plot del terzo grafico con l'area selezionata *)
-g1 = Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.6: Area delimitata da f(x) = 4, x1 = 1 e x2 = 2"], 22, Bold, Blue, Background->Lighter[Pink]]];
+g1 = Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.6: Area delimitata da f(x) = 4, x1 = 1 e x2 = 2"], 22, Bold, Blue, Background->Lighter[Pink]], AspectRatio->1, Ticks->{{1, 3},{0, 4}}, TicksStyle->Directive[Black, 20]];
 g2 = Plot[f[x], {x, inlimit1, inlimit2}, 
-   Filling -> 0];
+   Filling -> 0, AspectRatio->1, TicksStyle-> {Thick, Black}];
 
 (* visualizzazione dei tre grafici in una riga*)
 grafico2 = GraphicsRow[{plot3, Show[plot4, txt2], Show[g1, g2, txt2]}, ImageSize->Full]
@@ -71,7 +71,7 @@ grafico2 = GraphicsRow[{plot3, Show[plot4, txt2], Show[g1, g2, txt2]}, ImageSize
 grafico3::usage = "Vizualizza i tre grafici della funzione lineare f(x) = x+1"
 
 lText = Text[Style["a", Blue, Bold, FontSize->20], {0.7, -0.2}, align[Left]];
-cText = Text[Style["Area", Blue, Bold, Underlined, FontSize->26], {2.9, 2.7}, align[Center]];
+cText = Text[Style["Area", Blue, Bold, Underlined, FontSize->26], {2.9, 2}, align[Center]];
 rText = Text[Style["b", Blue, Bold, FontSize->20], {5.3, -0.2}, align[Right]];
 
 txt2 = Graphics[{lText, cText, rText}];
@@ -79,17 +79,17 @@ txt2 = Graphics[{lText, cText, rText}];
 funlim1 = 0;
 funlim2 = 6;
 (* dfinizione della funzione da plotare *)
-f1[x_]:=x+1
-plot3=Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.7: Funzione lineare f(x) = x + 1"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic];
-plot4=Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.8: Area sotto la funzione f(x) = x + 1"], 22, Bold, Blue, Background->Lighter[Pink]], Filling->Axis, GridLines->{{{1, Blue}, {5, Blue}}, None},
-AxesOrigin->{0,0}, AxesLabel->Automatic];
+f1[x_]:=x
+plot3=Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.7: Funzione lineare f(x) = x "], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic, TicksStyle->Directive[Black, 20]];
+plot4=Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.8: Area sotto la funzione f(x) = x "], 22, Bold, Blue, Background->Lighter[Pink]], Filling->Axis, GridLines->{{{1, Blue}, {5, Blue}}, None},
+AxesOrigin->{0,0}, AxesLabel->Automatic, TicksStyle->Directive[Black, 20]];
 (* limiti della area colorata da calcolare l'area *)
 inlimit1 = 1;
 inlimit2 = 5;
 
-g1 = Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.9: Area delimitata da f(x) = x + 1, x1 = 1 e x2 = 5"], 22, Bold, Blue, Background->Lighter[Pink]]];
+g1 = Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.9: Area delimitata da f(x) = x, x1 = 1 e x2 = 5"], 22, Bold, Blue, Background->Lighter[Pink]], TicksStyle->Directive[Black, 20]];
 g2 = Plot[f1[x], {x, inlimit1, inlimit2}, 
-   Filling -> 1.0];
+   Filling -> 0, TicksStyle->Directive[Black, 20]];
 (* visualizzazione dei tre grafici in una riga *)
 grafico3 = GraphicsRow[{plot3, Show[plot4, txt2], Show[g1, g2, txt2]}, ImageSize->Full]
 
@@ -119,24 +119,24 @@ grafico4 = GraphicsRow[{plot5, plot6}, ImageSize->Full]
 (*  grafico5 - procedimento di calcolare l'area sotto la curva dividendola in 4 rettangoli *)
 grafico5::usage = "Visualizza il procedimento per calcolare l'area sotto la curva dividendola in 4 rettangoli"
 
-lText = Text[Style["a", Blue, Bold, FontSize->20], {0.9, -0.7}, align[Left]];
+lText = Text[Style["a", Blue, Bold, FontSize->20], {0.8, -0.7}, align[Left]];
 lTextt = Text[Style["x1", Blue, Bold, FontSize->20], {1.55, 0.4}, align[Left]];
 cText = Text[Style["\!\(\*OverscriptBox[\(\[LongLeftRightArrow]\), \(dx\)]\)", Blue, Bold, FontSize->26], {1.25, 2.7}, align[Center]];
 cText2 = Text[Style["\!\(\*OverscriptBox[\(\[LongLeftRightArrow]\), \(dx\)]\)", Blue, Bold, FontSize->26], {1.75, 2.7}, align[Center]];
 cText3 = Text[Style["\!\(\*OverscriptBox[\(\[LongLeftRightArrow]\), \(dx\)]\)", Blue, Bold, FontSize->26], {2.25, 2.7}, align[Center]];
 cText4 = Text[Style["\!\(\*OverscriptBox[\(\[LongLeftRightArrow]\), \(dx\)]\)", Blue, Bold, FontSize->26], {2.75, 2.7}, align[Center]];
-rText = Text[Style["b", Blue, Bold, FontSize->20], {2.98, -0.7}, align[Right]];
+rText = Text[Style["b", Blue, Bold, FontSize->20], {2.9, -0.7}, align[Right]];
 
-lText1 = Text[Style["a", Blue, Bold, FontSize->20], {0.9, -0.7}, align[Left]];
+lText1 = Text[Style["a", Blue, Bold, FontSize->20], {0.8, -0.7}, align[Left]];
 cText1 = Text[Style["", Blue, Bold, Underlined, FontSize->26], {2.9, 2.7}, align[Center]];
-rText1 = Text[Style["b", Blue, Bold, FontSize->20], {2.97, -0.7}, align[Right]];
+rText1 = Text[Style["b", Blue, Bold, FontSize->20], {2.9, -0.7}, align[Right]];
 
 txt3 = Graphics[{lText,lTextt, cText, cText2,cText3,cText4, rText}];
 
 txt4 = Graphics[{lText1, cText1, rText1}];
 
-plott=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.12: Funzione esponenziale f(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\)"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic]; (**)
-plott0=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.13: Divisione del segmento [a, b] in 4 parti uguali"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic,
+plott=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.12: Funzione esponenziale f(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\)"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic,  TicksStyle->Directive[Black, 20]]; (**)
+plott0=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.13: Divisione del segmento [a, b] in 4 parti uguali"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic,  TicksStyle->Directive[Black, 20],
 (*  utilizzo Epilog per creare le linee verticali e dividere il grafico in 4 aree larghi dx*)
 Epilog->{
 InfiniteLine[{1, 0}, {1, 1000}], 
@@ -144,13 +144,13 @@ InfiniteLine[{1.5, 0}, {1.5, 1000}],
 InfiniteLine[{2, 0}, {2, 1000}],
 InfiniteLine[{2.5, 0}, {2.5, 1000}],
 InfiniteLine[{3, 0}, {3, 1000}]}];
-plott1=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.14: Calcoliamo la somma delle aree dei rettangoli costruiti"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic,
+plott1=Plot[f2[x], {x, -1, 3}, PlotLabel->Style[Framed["Fig.14: Calcoliamo la somma delle aree dei rettangoli"], 22, Bold, Blue, Background->Lighter[Pink]], AxesOrigin->{0,0}, AxesLabel->Automatic,  TicksStyle->Directive[Black, 20],
 Epilog->{Line[{{1, 0}, {1, 2.8}, {1.5, 2.8}, {1.5, 0}, {1.5, 4.4}, {2, 4.4}, {2, 0}, {2, 7.2}, {2.5, 7.2}, {2.5, 0}, {2.5, 12}, {3, 12}, {3, 0}}]}];
 g2 = Plot[f2[x], {x, 1, 3}, 
-   Filling -> 0];
+   Filling -> 0,  TicksStyle->Directive[Black, 20]];
 
    (* visualizzazione dei tre grafici *)
-GraphicsRow[{plott,Show[plott0, txt3], Show[plott1, g2, txt4]}, ImageSize->Full]
+grafico5 = GraphicsRow[{plott,Show[plott0, txt3], Show[plott1, g2, txt4]}, ImageSize->Full];
 
 (* ************************************************************************************************ *)
 
@@ -226,20 +226,20 @@ Show[{colsum, curve}], {{nrettangoli,4}, 2, 80}]
     visualizzazione del grafico della funzione con l'area da calcolare colorata e delimitata dalle costant a e b *)
     grafico7::usage = "Mostra come si calcola graficamente l'area per la funzione f(x) = x^2 in due punti a e b"
 
-leftText = Text[Style["a", Blue, Bold, FontSize->20], {0.9, -0.4}, align[Left]];
+leftText = Text[Style["a", Blue, Bold, FontSize->20], {0.85, -0.4}, align[Left]];
 centerText = Text[Style["Area", Blue, Bold, FontSize->26], {1.5, 1.2}, align[Center]];
-rightText = Text[Style["b", Blue, Bold, FontSize->20], {2.1, -0.4}, align[Right]];
+rightText = Text[Style["b", Blue, Bold, FontSize->20], {2.15, -0.4}, align[Right]];
 (* genero il testo da mettere nel grafico *)
 
 txt5 = Graphics[{leftText, centerText, rightText}];
 
 fu[x_]:=x^2;
-go1 = Plot[fu[x], {x, 0, 3}, PlotLabel->Style[Framed["Fig.17: Area delimitata da f(x)=\!\(\*SuperscriptBox[\(x\), \(2\)]\), a = 1 e b = 2"], 22, Bold, Blue, Background->Lighter[Pink]]];
+go1 = Plot[fu[x], {x, 0, 3}, PlotLabel->Style[Framed["Fig.17: Area delimitata da f(x)=\!\(\*SuperscriptBox[\(x\), \(2\)]\), a = 1 e b = 2"], 22, Bold, Blue, Background->Lighter[Pink]], TicksStyle->Directive[Black, 20], Ticks->{{1, 2}, {1, 4}}];
 go2 = Plot[fu[x], {x, 1, 2}, 
    Filling -> 0];
 
    (* Visualizza il grafico *)
-Show[go1, go2, txt5]
+grafico7 = Show[go1, go2, txt5]
 
 (* ********************************************************************************************************* *)
 (*  grafico8 - Visualizza 4 funzioni e permette di cambiare gli estremi di integrazione i modo dinamico
@@ -319,20 +319,103 @@ d4 = DynamicModule[{pts = {{0, 0}, {4, 2}}},
 (* Visualizza i grafici creare prima in una TabView *)
 grafico8::usage = "Crea una TabView per visualizzare le funzione Sin(x), Cos(x), Exp(x) e Sqrt(x)"
 grafico8 = TabView[{Seno[x] -> d1, Coseno[x] -> d2, Esponenziale[x] -> d3, 
-  RadiceQuadrata[x] -> d4}]
+  RadiceQuadrata[x] -> d4}, BaseStyle->{Orange, Bold, FontFamily->"Times"}, ImageSize->Automatic]
 
 (****************************************************************************)
 
 (*  showMeInfo - un comando che visualizza la data e il tempo corrente*)
 showMeInfo::usage = "Una piccola funzione che visualizza informazioni riguardanti l'ora e la data"
 
-showMeInfo = Dynamic[Refresh[DateString[], UpdateInterval -> 1]]
+showMeInfo = Dynamic[Refresh[DateString[], UpdateInterval -> 1]];
 
 (*****************************************************************************)
 
 (*  whereAmI - comando che setta le variabili di sistema $GeoLocationCity e $GeoLocationCountry per visualizzare dove ci si trova*)
 whereAmI::usage = "Comando che visualizza la locazione dove ci si trova"
 
-whereAmI = Print[$GeoLocationCity, ":" $GeoLocationCountry]
+(*whereAmI = Print[$GeoLocationCity, ":" $GeoLocationCountry];*)
 
-
+(***********************************************************************************)
+(*tabViewInt - funzione che visualizza una tabella in forma di tab di integrali notevoli*)
+tabViewInt::usage = "Visualizza una piccola tabella di integrali notevoli"
+Clear[x]
+tabViewInt = Framed[TabView[{HoldForm[
+     TraditionalForm[\[Integral]2 \[DifferentialD]x]] -> 
+    TraditionalForm[
+     HoldForm[
+      "Se f(x) = 2, allora una primitiva è " Framed["F(x) = 2x", 
+        BaseStyle -> Red] "perchè la derivata di F(x) è 2x"]] ,
+   HoldForm[TraditionalForm[\[Integral]Sin[x] \[DifferentialD]x]] -> 
+    TraditionalForm[
+     HoldForm[
+      "Se f(x) = sin(x), allora una primitiva è " Framed[
+        "F(x) = " - Cos[x], 
+        BaseStyle -> Red] "perchè la derivata di F(x) è" (-Cos[x])]], 
+   HoldForm[TraditionalForm[\[Integral]Cos[x] \[DifferentialD]x]] -> 
+    TraditionalForm[
+     HoldForm[
+      "Se f(x) = cos(x), allora una primitiva è " Framed[
+        "F(x) = " Sin[x], 
+        BaseStyle -> Red] "perchè la derivata di F(x) è " Sin[x]]],
+   HoldForm[TraditionalForm[\[Integral]2 x \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x)= 2x, allora una primitiva è" Framed[ "F(x) = " x^2, 
+       BaseStyle -> Red]  "perchè la derivata di F(x) è " x^2], 
+   HoldForm[TraditionalForm[\[Integral]Sqrt[x] \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*SqrtBox[\(x\)]\), allora una primitiva è" Framed[
+       "F(x) = \!\(\*FractionBox[\(2 \*SuperscriptBox[\(x\), \
+FractionBox[\(3\), \(2\)]]\), \(3\)]\)", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è  \!\(\*FractionBox[\(2 \
+\*SuperscriptBox[\(x\), FractionBox[\(2\), \(3\)]]\), \(3\)]\)"], 
+   HoldForm[TraditionalForm[\[Integral]x^n \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*SuperscriptBox[\(x\), \(n\)]\), allora una \
+primitiva è" Framed[
+       "F(x) =  \!\(\*FractionBox[SuperscriptBox[\(x\), \(n + 1\)], \
+\(n + 1\)]\), n\[NotEqual]-1", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è \
+\!\(\*FractionBox[SuperscriptBox[\(x\), \(n + 1\)], \(n + 1\)]\) per \
+ogni n\[NotEqual]-1"], 
+   HoldForm[TraditionalForm[\[Integral]1/x \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*FractionBox[\(1\), \(x\)]\), allora una \
+primitiva è" Framed[
+       "F(x) = ln\[LeftBracketingBar]x\[RightBracketingBar]", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è ln\[LeftBracketingBar]x\
+\[RightBracketingBar]"], 
+   HoldForm[TraditionalForm[\[Integral]E^x \[DifferentialD]x ]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\), \
+allora la primitiva è" Framed[
+       "F(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\)", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è \!\(\*SuperscriptBox[\(\
+\[ExponentialE]\), \(x\)]\)" ], 
+   HoldForm[TraditionalForm[\[Integral]a^x \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*SuperscriptBox[\(a\), \(x\)]\), allora una \
+primitiva è" Framed[
+       "F(x) = \!\(\*SuperscriptBox[\(a\), \
+\(x\)]\)\!\(\*SubsuperscriptBox[\(log\), \(a\), \
+\(\[ExponentialE]\)]\)", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è \
+\!\(\*SuperscriptBox[\(a\), \(x\)]\)\!\(\*SubsuperscriptBox[\(log\), \
+\(a\), \(\[ExponentialE]\)]\)"], 
+   HoldForm[
+     TraditionalForm[\[Integral]1/(1 + x^2) \[DifferentialD]x]] -> 
+    HoldForm[
+     "Se f(x) = \!\(\*FractionBox[\(1\), \(1 + \
+\*SuperscriptBox[\(x\), \(2\)]\)]\), allora una primitiva è" Framed[
+       "F(x) = arctg(x)", 
+       BaseStyle -> 
+        Red] "perchè la derivata di F(x) è \!\(\*FractionBox[\(1\), \
+\(1 + \*SuperscriptBox[\(x\), \(2\)]\)]\)"]}, 
+  LabelStyle -> Directive[Lighter[Red], Italic, 24], 
+  Alignment -> Center, 
+  BaseStyle -> { Large, FontFamily -> "Times", 24, Italic}], 
+ Background -> LightYellow]
