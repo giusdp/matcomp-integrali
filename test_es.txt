@@ -1,0 +1,28 @@
+% test set
+\int \frac{x^3}{\sqrt{9-x^2}} \,dx & Prova con il metodo di sostituzione! & (x^3)/(sqrt(9-(x^2))) & 1
+\int \frac{1}{\sqrt{x}+x\sqrt{x}} \,dx & Prova con il metodo di sostituzione! & 1/(sqrt(x) + x*sqrt(x)) & 1
+\int \frac{\sqrt{1-x}+3}{\sqrt{1-x}+1}  \,dx & Prova con il metodo di sostituzione! & (sqrt(1-x)+3)/(sqrt(1-x)+1) & 1
+\int \frac{2-x}{\sqrt{x}(\sqrt{x}+1)}  \,dx &  Prova con il metodo di sostituzione! & (2-x)/(sqrt(x)*(sqrt(x)+1)) & 1
+\int \sqrt{1-x^2} \,dx & Prova con il metodo di sostituzione con t = arcsin(x) e riscrivi cos^2(x) = 1/2(cos(2x)+1) & sqrt(1-x^2) & 1
+\int x\cos(x) \,dx & Prova per parti! & x*cos(x) & 1
+\int (x^2-1)\sin(x) \,dx & Prova per parti! & (x^2-1) * sin(x) & 1
+\int x^2e^x  \,dx &  Prova per parti! & x^2 * e^x & 1
+\int x\ln^2(5x) \,dx & Prova per parti! & x * ln^2(5x) & 1
+\int \frac{1}{x^2+4x+5} \,dx & Completa il quadrato al denominatore. & 1/(x^2 + 4x + 5) & 1
+\int \frac{x^2-x}{2x+1} \,dx & Dividi il polinomio. & (x^2 - x)/(2x+1) & 1
+\int \frac{1}{x(x-1)^2} \,dx &  Usa il metodo dei fratti semplici e poi con il metodo di sostituzione! & 1/(x*(x-1^2)) & 1
+\int \frac{x+1}{(x-4)(x-1)} \,dx & Usa il metodo dei fratti semplici & (x+1)/((x-4)*(x-1)) & 1
+\int (3x+5)\cos(\frac{x}{4}) \,dx &  Prova per parti e poi con il metodo di sostituzione! & (3x+5) * cos(x/4) & 1
+\int 2x(\ln(x-5)) \,dx &  Prova con il metodo di sostituzione e poi per parti! & 2x * ln(x-5) & 1
+\int 2xe^{-x} \,dx &  Prova per parti e poi con il metodo di sostituzione! & 2x * e^(-x) & 1
+\int \frac{e^{3x}}{e^{2x}-3e^x-10} \,dx & Prova con il metodo di sostituzione! & (e^(3x))/(e^(2x) - 3 * e^x - 10) & 1
+\int \frac{1}{x^2}\cos(\frac{1}{\sqrt{x}})  \,dx & Prova con il metodo di sostituzione e poi per parti!  & 1/(x^2) * cos(1/sqrt(x)) & 1
+\int \cos^2(x)  \,dx & RISCRIVI IL COS^2/Prova con il metodo di sostituzione!  & cos^2(x) & 1
+\int \frac{1}{x^3}e^{\frac{1}{x}}  \,dx &  Prova con il metodo di sostituzione e poi per parti! & 1/(x^3) * e^(1/x) & 1
+\int x^2\arctan(x)  \,dx &  Prova per parti e poi con il metodo di sostituzione! & x^2 * arctan(x) & 1
+\int \sin^2(x) \,dx &  RISCRIVI IL SIN^2/Prova con il metodo di sostituzione! & sin^2(x) & 1
+\int \frac{3+\sin(x)}{1+\cos(x)} \,dx &  Prova con il metodo di sostituzione con t=tan(x/2) & (3 + sin(x))/(1 + cos(x)) & 1
+\int \frac{\ln^2(x)+1}{x\ln(x)} \,dx &  Prova con il metodo di sostituzione! & (ln^2(x)+1)/(x * ln(x)) & 1
+\int \frac{\ln(x)}{x(\ln^2(x)-1)} \,dx &  Prova con il metodo di sostituzione! & (ln(x))/(x * (ln^2(x)-1)) & 1
+\int \frac{5}{x\ln(3x^2)} \,dx & Prova con il metodo di sostituzione! & 5/(x * ln(3x^2)) & 1
+\int e^{2x}\ln(1+e^x) \,dx & Prova con il metodo di sostituzione e poi per parti! & e^(2x) * ln(1 + e^x) & 1
