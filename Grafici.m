@@ -27,12 +27,16 @@ GridLines->{{{2, Blue}, {8, Blue}}, None}, PlotRange -> {{0, 10}, All}, AxesLabe
 Show[plot1, txt];
 (* la funzione e i punti x=a e x=b *)
 
-plot2=Plot[f[x], {x, 2, 8}, AxesOrigin->{0,0}, Filling->Axis, PlotLabel->Style[Framed["Fig.3: Area delimitata da f(x) = log(x), x1 = a e x2 = b"], 22, Bold, Blue, Background->Lighter[Pink]], 
+plot2=Plot[f[x], {x, 2, 8}, AxesOrigin->{0,0}, Filling->Axis, PlotLabel->Style[Framed["Fig.3: Area delimitata da f(x) = log(x) in [a,b]"], 22, Bold, Blue, Background->Lighter[Pink]], 
+  
+PlotRange -> {{0, 10}, All}, AxesLabel->Automatic, Ticks->None];
 
+plot2a=Plot[f[x], {x, 1, 10}, AxesOrigin->{0,0}, 
+  
 PlotRange -> {{0, 10}, All}, AxesLabel->Automatic, Ticks->None];
 
 (* visualizza i tre grafici creati prima in una unica riga utilizzando GraphicsRow*)
-grafico1 = GraphicsRow[{plot0, Show[plot1, txt], Show[plot2,txt]}, ImageSize->Full];
+grafico1 = GraphicsRow[{plot0, Show[plot1, txt], Show[plot2, plot2a,txt]}, ImageSize->Full];
 
 (* ********************************************************************************* *)
 
@@ -58,7 +62,7 @@ AxesOrigin->{0,0}, AxesLabel->Automatic, AspectRatio->1, Ticks->{{1, 3},{0, 4}},
 inlimit1 = 1;
 inlimit2 = 3;
 (* plot del terzo grafico con l'area selezionata *)
-g1 = Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.6: Area delimitata da f(x) = 4, x1 = 1 e x2 = 2"], 22, Bold, Blue, Background->Lighter[Pink]], AspectRatio->1, Ticks->{{1, 3},{0, 4}}, TicksStyle->Directive[Black, 20]];
+g1 = Plot[f[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.6: Area delimitata da f(x) = 4, a = 1 e b = 2"], 22, Bold, Blue, Background->Lighter[Pink]], AspectRatio->1, Ticks->{{1, 3},{0, 4}}, TicksStyle->Directive[Black, 20]];
 g2 = Plot[f[x], {x, inlimit1, inlimit2}, 
    Filling -> 0, AspectRatio->1, TicksStyle-> {Thick, Black}];
 
@@ -87,7 +91,7 @@ AxesOrigin->{0,0}, AxesLabel->Automatic, TicksStyle->Directive[Black, 20]];
 inlimit1 = 1;
 inlimit2 = 5;
 
-g1 = Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.9: Area delimitata da f(x) = x, x1 = 1 e x2 = 5"], 22, Bold, Blue, Background->Lighter[Pink]], TicksStyle->Directive[Black, 20]];
+g1 = Plot[f1[x], {x, funlim1, funlim2}, PlotLabel->Style[Framed["Fig.9: Area delimitata da f(x) = x, a = 1 e b = 5"], 22, Bold, Blue, Background->Lighter[Pink]], TicksStyle->Directive[Black, 20]];
 g2 = Plot[f1[x], {x, inlimit1, inlimit2}, 
    Filling -> 0, TicksStyle->Directive[Black, 20]];
 (* visualizzazione dei tre grafici in una riga *)
@@ -267,7 +271,7 @@ d2 = DynamicModule[{pts = {{- Pi/2, 0}, {Pi/2, 0}}},
    LocatorPane[
     Dynamic[pts, (pts[[1]] = {#[[1, 1]], 0}; 
        pts[[2]] = {#[[2, 1]], 0}) &], 
-    Dynamic[Framed@Show@{Plot[Cos@x, {x, -2, Pi/2},
+    Dynamic[Framed@Show@{Plot[Cos@x, {x, -Pi/2, Pi/2},
          PlotLabel -> 
           ToString@
             StandardForm[
@@ -368,7 +372,7 @@ tabViewInt = Framed[TabView[{HoldForm[
 FractionBox[\(3\), \(2\)]]\), \(3\)]\)", 
        BaseStyle -> 
         Red] "perchè la derivata di F(x) è  \!\(\*FractionBox[\(2 \
-\*SuperscriptBox[\(x\), FractionBox[\(2\), \(3\)]]\), \(3\)]\)"], 
+\*SuperscriptBox[\(x\), FractionBox[\(3\), \(2\)]]\), \(3\)]\)"], 
    HoldForm[TraditionalForm[\[Integral]x^n \[DifferentialD]x]] -> 
     HoldForm[
      "Se f(x) = \!\(\*SuperscriptBox[\(x\), \(n\)]\), allora una \
@@ -390,7 +394,7 @@ primitiva è" Framed[
    HoldForm[TraditionalForm[\[Integral]E^x \[DifferentialD]x ]] -> 
     HoldForm[
      "Se f(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\), \
-allora la primitiva è" Framed[
+allora una primitiva è" Framed[
        "F(x) = \!\(\*SuperscriptBox[\(\[ExponentialE]\), \(x\)]\)", 
        BaseStyle -> 
         Red] "perchè la derivata di F(x) è \!\(\*SuperscriptBox[\(\
