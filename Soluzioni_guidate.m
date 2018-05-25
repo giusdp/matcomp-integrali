@@ -71,12 +71,12 @@ stepIndefiniteFunction[integrand_] := CreateDialog[
    Column[{WolframAlpha[integrand, {{"IndefiniteIntegral", 2}, "Content"},
     PodStates -> {"IndefiniteIntegral__Step-by-step solution"}], 
      DefaultButton["Close", DialogReturn[]]}], WindowTitle -> "Soluzione Guidata!", 
-     WindowSize -> {600, 700}, Modal -> True, WindowElements -> "VerticalScrollBar"];
+     WindowSize -> {500, 700}, Modal -> True, WindowElements -> "VerticalScrollBar"];
 
 (* Funzione step-by-step a cui passare stringa per integrali definiti *)
 stepDefiniteFunction[integrand_] := CreateDialog[
    Column[ { 
      Pane[WolframAlpha[integrand, {{"Input", 2}, "Content"}, 
        PodStates -> {"Input__Step-by-step solution"}] ], 
-     DefaultButton["Close", DialogReturn[]]}], WindowTitle -> "Soluzione Guidata!", WindowSize -> {600, 700}, Modal -> True, 
+     DefaultButton["Close", DialogReturn[]]}], WindowTitle -> "Soluzione Guidata!", WindowSize -> {500, 700}, Modal -> True, 
    WindowElements -> "VerticalScrollBar"];

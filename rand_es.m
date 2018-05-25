@@ -12,24 +12,33 @@ mostraEsercizio[esercizi_] := Module[{esex, traccia, sugg, wolfram, tipo, sol},
     (*wolfram = Extract[esex, 3];*)
     tipo = ToExpression[Extract[esex, Length[esex]]];
     sol := If[tipo == 1, stepIndefiniteFunction[traccia], stepDefiniteFunction[traccia]];
-    Return[
-        GridBox[
+    Print[MaTeX[ToString[traccia], Magnification->4]];
+    Print[
+        Grid[{
             {
-                {
-                    MaTeX[ToString[traccia], Magnification->2]
-                },
-                {
-                    Framed[ Button[Style["Mostra il suggerimento!", FontSize->Larger], mostraSugg[sugg]]
-                        Button[Style["Vedi la soluzione guidata!", FontSize->Larger], sol, Method->"Queued"], 
-                        FrameStyle->Directive[Orange, 82], RoundingRadius->10, Alignment->Baseline]
-                }
-            }, RowSpacings->5] // DisplayForm
-        ];
+                Framed[Tooltip[ButtonBar[{"Mostra il suggerimento!" :> MessageDialog["\t\t\tSuggerimento:\n"
+                    Framed[sugg, BaseStyle-> u24, ImageSize->{315, 125}, FrameStyle->Red, 
+                    RoundingRadius->10, Alignment->Center]]}, ImageSize->{300, 100}, Alignment->Center, 
+                    BaseStyle->{Orange, 22, Italic, Bold, FontFamily->"Times"}], "Fammi vedere il suggerimento!"],
+                    Alignment->Center, RoundingRadius->5], 
+                "               ",
+                Framed[
+                    Tooltip[
+                        ButtonBar[
+                            {"Soluzione guidata" :> MessageDialog["Attendere il caricamento della soluzione."] sol},
+                            Method->"Queued", ImageSize->{300, 100}, Alignment->Center, BaseStyle->{Orange, 22, Italic, Bold, FontFamily->"Times"}
+                        ], "Fammi vedere i passi!"], 
+                    Alignment->Center, RoundingRadius->5
+                ]
+            }
+            }
+        ]
     ]
+]
 
 caricaEsercizi[] := Module[{exs},
     exs = {};
-    f = OpenRead["test_es.txt"];
+    f = OpenRead["esercizi_misti.txt"];
     While[True, 
         line = ReadLine[f];
         If[line == EndOfFile, Break[]];
@@ -40,6 +49,3 @@ caricaEsercizi[] := Module[{exs},
     Close[f];
     Return[exs];
 ]
-
-
-mostraSugg[sugg_] := MessageDialog[Cell[Pane[sugg]]];
