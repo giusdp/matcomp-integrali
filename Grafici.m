@@ -400,16 +400,13 @@ allora una primitiva è" Framed[
         Red] "perchè la derivata di F(x) è \!\(\*SuperscriptBox[\(\
 \[ExponentialE]\), \(x\)]\)" ], 
    HoldForm[TraditionalForm[\[Integral]a^x \[DifferentialD]x]] -> 
-    HoldForm[
-     "Se f(x) = \!\(\*SuperscriptBox[\(a\), \(x\)]\), allora una \
+ HoldForm["Se f(x) = \!\(\*SuperscriptBox[\(a\), \(x\)]\), allora la \
 primitiva è" Framed[
-       "F(x) = \!\(\*SuperscriptBox[\(a\), \
-\(x\)]\)\!\(\*SubsuperscriptBox[\(log\), \(a\), \
-\(\[ExponentialE]\)]\)", 
-       BaseStyle -> 
-        Red] "perchè la derivata di F(x) è \
-\!\(\*SuperscriptBox[\(a\), \(x\)]\)\!\(\*SubsuperscriptBox[\(log\), \
-\(a\), \(\[ExponentialE]\)]\)"], 
+    "F(x) = \!\(\*FractionBox[SuperscriptBox[\(a\), \(x\)], \
+\(Log[a]\)]\)", 
+    BaseStyle -> 
+     Red] "perchè la derivata di F(x) è \
+\!\(\*FractionBox[SuperscriptBox[\(a\), \(x\)], \(Log[a]\)]\)"], 
    HoldForm[
      TraditionalForm[\[Integral]1/(1 + x^2) \[DifferentialD]x]] -> 
     HoldForm[
