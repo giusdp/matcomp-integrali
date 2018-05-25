@@ -12,12 +12,12 @@ mostraEsercizio[esercizi_] := Module[{esex, traccia, sugg, wolfram, tipo, sol},
     (*wolfram = Extract[esex, 3];*)
     tipo = ToExpression[Extract[esex, Length[esex]]];
     sol := If[tipo == 1, stepIndefiniteFunction[traccia], stepDefiniteFunction[traccia]];
-    Print[MaTeX[ToString[traccia], Magnification->4]];
-    Print[
+    Return[
         Grid[{
-            {
-                Framed[Tooltip[ButtonBar[{"Mostra il suggerimento!" :> MessageDialog["\t\t\tSuggerimento:\n"
-                    Framed[sugg, BaseStyle-> u24, ImageSize->{315, 125}, FrameStyle->Red, 
+                {MaTeX[ToString[traccia], Magnification->4],SpanFromLeft},
+                {
+                Framed[Tooltip[ButtonBar[{"Mostra il suggerimento!" :> MessageDialog["Suggerimento:\n"
+                    Framed[ToString[ToExpression[sugg]], BaseStyle-> 24, ImageSize->{315, 125}, FrameStyle->Red, 
                     RoundingRadius->10, Alignment->Center]]}, ImageSize->{300, 100}, Alignment->Center, 
                     BaseStyle->{Orange, 22, Italic, Bold, FontFamily->"Times"}], "Fammi vedere il suggerimento!"],
                     Alignment->Center, RoundingRadius->5], 
@@ -31,7 +31,7 @@ mostraEsercizio[esercizi_] := Module[{esex, traccia, sugg, wolfram, tipo, sol},
                     Alignment->Center, RoundingRadius->5
                 ]
             }
-            }
+        }
         ]
     ]
 ]
