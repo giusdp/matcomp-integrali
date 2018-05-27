@@ -1,26 +1,21 @@
- to do///
-1. aggiungere gli import di matex dove manca (x)
-2. magnification 3 (x)
-3. aggiungere i tag agli altri slide (x)
-4. cambiare gli imagini con le formule in latex (x)
-5. aggiungere i tasti e linkare (x)
-6. finire l'indice dei metodi (x)
+TODO:
 
-7. aggiungere gli esercizi con le soluzioni guidate
-8. aggiungere gli esercizi senza soluzioni
+1) Aggiungere ai primi 20 esercizi in allenamento, Method->"Queued" e messaggio di avviso
 
-9. aggiungere gli audio a ogni slide 
-10. aggingere i video 
-11. aggingere i tasti per mostrare elenco esercizi e tablla formule
+2) Aggiustare visualizzazione suggerimento
 
-...................
-cosi finiamo il punto .nb
-...................
-1. spostare il codice dei grafici in funzioni nel .m
-2. quiz esercizi 
+3) Aggiustare suggerimenti in esercizi_misti.txt
 
+4) Controllare quali esercizi in esercizi_misti wolfram legge bene 
 
-**************************************
-TODO
-**************************************
-1. slide 17 da fare la soluzione guidata
+5) Finire di aggiungere gli audio
+
+6) Aggiungere slide il mio integrale in allenamento.nb
+
+7) Creare il tasto genera esercizio
+
+8) Far si che generando un esercizio si rimpiazza quello già generato
+
+9) Creare notebook quiz e aggiungere tasto in teoria
+
+10) Mettere la nostra immagine allo start
