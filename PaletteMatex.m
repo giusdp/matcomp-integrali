@@ -86,6 +86,6 @@ paletteFormula :=
        SpanFromLeft}}, 
      Background -> {Automatic, {{LightOrange, LightYellow}}}, 
      Frame -> All, FrameStyle -> Directive[Red, Dotted]], 
-    Appearance -> "Palette"], WindowElements -> "VerticalScrollBar"];
+    Appearance -> "Palette"], WindowElements -> "VerticalScrollBar", WindowTitle-> "Tabella Integrali"];
 
 (*Button["Forumule", paletteFormula]*)
