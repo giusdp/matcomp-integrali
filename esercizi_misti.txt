@@ -5,98 +5,98 @@
 %
 % Inizio Lista Esercizi:
 %%%%%%%%%%%%%%%%%%%%%%% INTEGRALI INDEFINITI %%%%%%%%%%%%%%%%%%%%%%% & 1
-\int \frac{x^3}{\sqrt{9-x^2}} \,dx & Prova con il metodo di sostituzione! & (x^3)/(sqrt(9-(x^2))) & 1
-\int \frac{1}{\sqrt{x}+x\sqrt{x}} \,dx & Prova con il metodo di sostituzione! & 1/(sqrt(x) + x*sqrt(x)) & 1
-\int \frac{\sqrt{1-x}+3}{\sqrt{1-x}+1}  \,dx & Prova con il metodo di sostituzione! & (sqrt(1-x)+3)/(sqrt(1-x)+1) & 1
-\int \frac{2-x}{\sqrt{x}(\sqrt{x}+1)}  \,dx &  Prova con il metodo di sostituzione! & (2-x)/(sqrt(x)*(sqrt(x)+1)) & 1
-\int \sqrt{1-x^2} \,dx & Prova con il metodo di sostituzione con t = arcsin(x) e riscrivi cos^2(x) = 1/2(cos(2x)+1) & sqrt(1-x^2) & 1
-\int x\cos(x) \,dx & Prova per parti! & x*cos(x) & 1
-\int (x^2-1)\sin(x) \,dx & Prova per parti! & (x^2-1) * sin(x) & 1
-\int x^2e^x  \,dx &  Prova per parti! & x^2 * e^x & 1
-\int x\ln^2(5x) \,dx & Prova per parti! & x * ln^2(5x) & 1
-\int \frac{1}{x^2+4x+5} \,dx & Completa il quadrato al denominatore. & 1/(x^2 + 4x + 5) & 1
-\int \frac{x^2-x}{2x+1} \,dx & Dividi il polinomio. & (x^2 - x)/(2x+1) & 1
-\int \frac{1}{x(x-1)^2} \,dx &  Usa il metodo dei fratti semplici e poi con il metodo di sostituzione! & 1/(x*(x-1^2)) & 1
-\int \frac{x+1}{(x-4)(x-1)} \,dx & Usa il metodo dei fratti semplici & (x+1)/((x-4)*(x-1)) & 1
-\int (3x+5)\cos(\frac{x}{4}) \,dx &  Prova per parti e poi con il metodo di sostituzione! & (3x+5) * cos(x/4) & 1
-\int 2x(\ln(x-5)) \,dx &  Prova con il metodo di sostituzione e poi per parti! & 2x * ln(x-5) & 1
+\int \frac{x^3}{\sqrt{9-x^2}} \,dx & Prova con il metodo di sostituzione! & 1
+%\int \frac{1}{x^\frac{3}{2} + \sqrt{x}} \,dx & Prova con il metodo di sostituzione! & 1
+\int \frac{\sqrt{1-x}+3}{\sqrt{1-x}+1}  \,dx & Prova con il metodo di sostituzione! & 1
+\int \frac{2-x}{\sqrt{x}(\sqrt{x}+1)}  \,dx &  Prova con il metodo di sostituzione! & 1
+\int \sqrt{1-x^2} \,dx & Prova con il metodo di sostituzione con t = arcsin(x) e riscrivi cos^2(x) = 1/2(cos(2x)+1) & 1
+\int x\cos(x) \,dx & Prova per parti! & 1
+\int (x^2-1)\sin(x) \,dx & Prova per parti! & 1
+\int x^2e^x  \,dx &  Prova per parti! & 1
+\int x\ln^2(5x) \,dx & Prova per parti! & 1
+\int \frac{1}{x^2+4x+5} \,dx & Completa il quadrato al denominatore. & 1
+\int \frac{x^2-x}{2x+1} \,dx & Dividi il polinomio. & 1
+\int \frac{1}{x(x-1)^2} \,dx &  Usa il metodo dei fratti semplici e poi con il metodo di sostituzione! & 1
+\int \frac{x+1}{(x-4)(x-1)} \,dx & Usa il metodo dei fratti semplici & 1
+\int (3x+5)\cos(\frac{x}{4}) \,dx &  Prova per parti e poi con il metodo di sostituzione! & 1
+\int 2x(\ln(x-5)) \,dx &  Prova con il metodo di sostituzione e poi per parti! & 1
 \int 2xe^{-x} \,dx &  Prova per parti e poi con il metodo di sostituzione! & 2x * e^(-x) & 1
-\int \frac{e^{3x}}{e^{2x}-3e^x-10} \,dx & Prova con il metodo di sostituzione! & (e^(3x))/(e^(2x) - 3 * e^x - 10) & 1
-\int \frac{1}{x^2}\cos(\frac{1}{\sqrt{x}})  \,dx & Prova con il metodo di sostituzione e poi per parti!  & 1/(x^2) * cos(1/sqrt(x)) & 1
-\int \cos^2(x)  \,dx & RISCRIVI IL COS^2/Prova con il metodo di sostituzione!  & cos^2(x) & 1
-\int \frac{1}{x^3}e^{\frac{1}{x}}  \,dx &  Prova con il metodo di sostituzione e poi per parti! & 1/(x^3) * e^(1/x) & 1
-\int x^2\arctan(x)  \,dx &  Prova per parti e poi con il metodo di sostituzione! & x^2 * arctan(x) & 1
-\int \sin^2(x) \,dx &  RISCRIVI IL SIN^2/Prova con il metodo di sostituzione! & sin^2(x) & 1
-\int \frac{3+\sin(x)}{1+\cos(x)} \,dx &  Prova con il metodo di sostituzione con t=tan(x/2) & (3 + sin(x))/(1 + cos(x)) & 1
-\int \frac{\ln^2(x)+1}{x\ln(x)} \,dx &  Prova con il metodo di sostituzione! & (ln^2(x)+1)/(x * ln(x)) & 1
-\int \frac{\ln(x)}{x(\ln^2(x)-1)} \,dx &  Prova con il metodo di sostituzione! & (ln(x))/(x * (ln^2(x)-1)) & 1
-\int \frac{5}{x\ln(3x^2)} \,dx & Prova con il metodo di sostituzione! & 5/(x * ln(3x^2)) & 1
-\int e^{2x}\ln(1+e^x) \,dx & Prova con il metodo di sostituzione e poi per parti! & e^(2x) * ln(1 + e^x) & 1
-\int \arcsin^2(5x) \,dx & Prova con il metodo di sostituzione!/Prova per parti! F=SIN^-1,G'=T/(RAD(1-T^2)) & 1
-\int \tan^3(x)+\tan^5(x) \,dx & FORMULA CHE NON ABBIAMO MESSO & 1
-\int x^2\ln(x+\sqrt{x^2+2}) \,dx & Prova per parti!/Prova con il metodo di sostituzione! & 1
+\int \frac{e^{3x}}{e^{2x}-3e^x-10} \,dx & Prova con il metodo di sostituzione! & 1
+\int \frac{1}{x^2}\cos(\frac{1}{\sqrt{x}})  \,dx & Prova con il metodo di sostituzione e poi per parti! & 1
+\int \cos^2(x)  \,dx & Riscrivi il cos^2 e poi prova con il metodo di sostituzione!  & cos^2(x) & 1
+%\int \frac{1}{x^3}e^{\frac{1}{x}}  \,dx &  Prova con il metodo di sostituzione e poi per parti! & 1
+\int x^2\arctan(x)  \,dx &  Prova per parti e poi con il metodo di sostituzione! & 1
+\int \sin^2(x) \,dx &  Riscrivi il sin^2 e poi prova con il metodo di sostituzione! & sin^2(x) & 1
+\int \frac{3+\sin(x)}{1+\cos(x)} \,dx &  Prova con il metodo di sostituzione con t=tan(x/2) & 1
+\int \frac{\ln^2(x)+1}{x\ln(x)} \,dx &  Prova con il metodo di sostituzione! & 1
+\int \frac{\ln(x)}{x(\ln^2(x)-1)} \,dx &  Prova con il metodo di sostituzione! & 1
+\int \frac{5}{x\ln(3x^2)} \,dx & Prova con il metodo di sostituzione! & 1
+\int e^{2x}\ln(1+e^x) \,dx & Prova con il metodo di sostituzione e poi per parti! & 1
+\int \arcsin^2(5x) \,dx & Prova con il metodo di sostituzione e poi per prova per parti! & 1
+%\int \tan^3(x)+\tan^5(x) \,dx & Usa la formula di abbassamento di grade della tangente.  & 1
+\int x^2\ln(x+\sqrt{x^2+2}) \,dx & Prova per parti e poi metodo di sostituzione! & 1
 \int x\sqrt[3]{2-x} \,dx & Prova con il metodo di sostituzione! & 1
-\int \frac{1-\sqrt[3]{1+x}}{\sqrt{1+x}+\sqrt[3]{1+x}} \,dx &  Prova con il metodo di sostituzione! &:PRIMA T=X+1 POI U=RAD6DIT & 1
-\int \frac{x+\sqrt{x-1}}{x-5} \,dx & Prova con il metodo di sostituzione!/FRATTI SEMPLICI & 1
-\int (x^3-x^2)\ln(x) \,dx & MOLTE Prova per parti! & 1
-\int e^x\ln(1-e^{-x}) \,dx & Prova con il metodo di sostituzione!/Prova per parti!/FRATTI SEMPLICI & 1
-\int \sqrt{x^3+5x^2} \,dx & RISCRIVI LA FUNZIONE/Prova con il metodo di sostituzione! & 1
+\int \frac{1-\sqrt[3]{1+x}}{\sqrt{1+x}+\sqrt[3]{1+x}} \,dx &  Prova con il metodo di sostituzione! & 1
+\int \frac{x+\sqrt{x-1}}{x-5} \,dx & Prova con il metodo di sostituzione e poi usa il metodo dei fratti semplici. & 1
+\int (x^3-x^2)\ln(x) \,dx & Prova per parti piu' volte! & 1
+\int e^x\ln(1-e^{-x}) \,dx & Prova con il metodo di sostituzione, poi per parti e infine fratti semplici. & 1
+\int \sqrt{x^3+5x^2} \,dx & Riscrivi la funzione in modo diverso e prova con il metodo di sostituzione! & 1
 \int \sin^2(x)\cos(x) \,dx & Prova con il metodo di sostituzione! & 1
-\int \cos^3(x) \,dx & NUOVA FORMULA & 1
-\int \frac{e^x}{\sqrt{1-e^{2x}}} \,dx & Prova con il metodo di sostituzione! T=E^X,S=ARCSIN(U)/RISCRIVI IL COSENO & 1
+%\int \cos^3(x) \,dx & Formula abbassamento di grado del coseno & 1
+\int \frac{e^x}{\sqrt{1-e^{2x}}} \,dx & Prova con il metodo di sostituzione! t=e^x, s=arcsin(t). & 1
 \int \frac{\sin(1+\sqrt{x})}{\sqrt{x}} \,dx &  Prova con il metodo di sostituzione! & 1
 \int \frac{1}{1+\sqrt{x}} \,dx & Prova con il metodo di sostituzione! & 1
 \int \frac{(1+\sqrt{x})^4}{\sqrt{x}} \,dx &  Prova con il metodo di sostituzione! & 1
-\int \sqrt{e^x+1} \,dx & Prova con il metodo di sostituzione! & 1
-\int \frac{\sqrt{1-x^2}}{x^2} \,dx &  C'E DI MEZZO LA COT E LA CSC & 1
+%\int \sqrt{e^x+1} \,dx & Prova con il metodo di sostituzione! & 1
+%\int \frac{\sqrt{1-x^2}}{x^2} \,dx &  C'E DI MEZZO LA COT E LA CSC & 1
 \int \frac{1}{e^x+e^{-x}} \,dx & Prova con il metodo di sostituzione! & 1
 \int \frac{x}{\sqrt{x+1}} \,dx & Prova con il metodo di sostituzione! & 1
-\int \frac{1}{e^x+1} \,dx & Prova con il metodo di sostituzione!/FRATTI SEMPLICI & 1
-\int \frac{x^2}{\sqrt{1-x^2}} \,dx & Prova con il metodo di sostituzione! X=SIN E RISCRIVI IL SIN^2 & 1
-\int \frac{x}{4-x} \,dx & RISCRIVI IL NUMERATORE & 1
-\int \frac{3\tan(x)}{1+\cos(3x)} \,dx &  Prova con il metodo di sostituzione! T=3X E S=TAN(T/2)/RAZIONALE & 1
-\int \sin^4(x)\cos^3(x) \,dx & NUOVA FORMULA & 1
-\int \frac{\cos(x)-\cos^3(x)}{1-\cos(x)} \,dx & Prova con il metodo di sostituzione! T=TAN(X/2)DA VEDERE CON LO SCORRIMENTO & 1
-\int \sin(x)\cos(x)e^{\sin(x)} \,dx & Prova con il metodo di sostituzione!/Prova per parti! & 1
+\int \frac{1}{e^x+1} \,dx & Prova con il metodo di sostituzione e usa i fratti semplici. & 1
+\int \frac{x^2}{\sqrt{1-x^2}} \,dx & Prova con il metodo di sostituzione! t = arcsin(x). & 1
+\int \frac{x}{4-x} \,dx & Riscrivi il numeratore. & 1
+%\int \frac{3\tan(x)}{1+\cos(3x)} \,dx &  Prova con il metodo di sostituzione! t=3x e s=tan(t/2) & 1
+%\int \sin^4(x)\cos^3(x) \,dx & Formule abbassamento grado. & 1
+\int \frac{\cos(x)-\cos^3(x)}{1-\cos(x)} \,dx & Prova con il metodo di sostituzione! t=tan(x/2) & 1
+\int \sin(x)\cos(x)e^{\sin(x)} \,dx & Prova con il metodo di sostituzione e poi per parti! & 1
 \int \sqrt{1+\cos^2(x)}2\sin(x)\cos(x)\cos(2x) \,dx & Prova con il metodo di sostituzione! & 1
-\int \frac{\sin(\frac{1}{x})\cos(\frac{1}{x})-\cos(\frac{1}{x})}{\sin^2(\f &rac{1}{x})+2\sin(\frac{1}{x})+5}\cdot\frac{1}{x^2} \,dx & RISCRIVI LA FUNZIONE(RACCOGLI)SOSTITUISCIT=SIN(1/X)/RAZIONALE & 1
-\int \frac{\sqrt{x}}{\sqrt{x}-\sqrt[3]{x}} \,dx & SOSTITUISCI T=RAD6X/RAZIONALE & 1 
-\int \frac{cos(x)-3}{\sin^2(x)-\cos^3(x)+1} \,dx & Prova con il metodo di sostituzione! T=TAN(X/2)/RAZIONALE BIG & 1
-\int \frac{1}{e^x+3} \,dx & Prova con il metodo di sostituzione!/FRATTI SEMPLICI & 1
-\int \frac{e^{3x}}{e^{2x}-5e^x+6} \,dx & Prova con il metodo di sostituzione!/FRATTI SEMPLICI & 1
-\int \frac{2}{(x^2+1)^2} \,dx & Prova con il metodo di sostituzione! T=TAN-1(X)/RISCRIVI IL COSENO & 1
-\int \frac{1}{\tan(x)+\cos(x)} \,dx & MOLTIPLICA A NUM E A DEN PER IL COSENO/Prova con il metodo di sostituzione! & 1
-\int \arcsin(\frac{x-2}{x+2}) \,dx & Prova per parti! F=ARCSIN,G'=1/SOSTIT T=X^2 & 1
-\int \frac{1}{\sqrt{x^2}+k^2} \,dx & Prova con il metodo di sostituzione!/T=DENOMINATORE & 1
+%\int \frac{\sin(\frac{1}{x})\cos(\frac{1}{x})-\cos(\frac{1}{x})}{\sin^2(\f &rac{1}{x})+2\sin(\frac{1}{x})+5}\frac{1}{x^2} \,dx & RISCRIVI LA FUNZIONE(RACCOGLI)SOSTITUISCIT=SIN(1/X)/RAZIONALE & 1
+\int \frac{\sqrt{x}}{\sqrt{x}-\sqrt[3]{x}} \,dx & Sostituisci t=x^1/6 & 1 
+\int \frac{cos(x)-3}{\sin^2(x)-\cos^3(x)+1} \,dx & Prova con il metodo di sostituzione! t=tan(x/2) & 1
+\int \frac{1}{e^x+3} \,dx & Prova con il metodo di sostituzione e poi fratti semplici. & 1
+\int \frac{e^{3x}}{e^{2x}-5e^x+6} \,dx & Prova con il metodo di sostituzione e poi fratti semplici. & 1
+\int \frac{2}{(x^2+1)^2} \,dx & Prova con il metodo di sostituzione! t=arctan(x). & 1
+\int \frac{1}{\tan(x)+\cos(x)} \,dx & Moltiplica il numeratore e il denominatore per la funzione coseno. Poi prova con il metodo di sostituzione! & 1
+\int \arcsin(\frac{x-2}{x+2}) \,dx & Prova per parti! F=arcsin, G'=1 & 1
+\int \frac{1}{\sqrt{x^2}+k^2} \,dx & Prova con il metodo di sostituzione! Poni t = denominatore. & 1
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%% INTEGRALI DEFINITI %%%%%%%%%%%%%%%%%%%%%%%
 \int_{0}^{1} \frac{2x+1}{x^2+x+2} \,dx & Prova con il metodo di sostituzione! & 2
-\int_{-\frac{1}{4}}^{\frac{\pi-1}{4}}  4\sin(4x+1)  \,dx & NON VA(Prova con il metodo di sostituzione!) & 2
-\int_{\frac{1}{3}}^{1}  e^{3x-1} \,dx & Prova con il metodo di sostituzione! & 2
+%\int_{-\frac{1}{4}}^{\frac{\pi-1}{4}}  4\sin(4x+1)  \,dx & NON VA(Prova con il metodo di sostituzione!) & 2
+%\int_{\frac{1}{3}}^{1}  e^{3x-1} \,dx & Prova con il metodo di sostituzione! & 2
 \int_{0}^{\frac{1}{2}} (4x+1)^3    \,dx & Prova con il metodo di sostituzione! & 2
-\int_{0}^{1} e^x+e^{-x}   \,dx & Prova con il metodo di sostituzione!/FONDAMENTALE & 2
-\int_{-3}^{3}  \arctan(x^3)  \,dx & PROPRIETà & 2
-\int_{\frac{3\pi}{10}}^{\frac{\pi}{5}}  \sin(5x-\pi) \,dx & NONVA & 2
+\int_{0}^{1} e^x+e^{-x}   \,dx & Prova con il metodo di sostituzione! & 2
+\int_{-3}^{3}  \arctan(x^3)  \,dx & Utilizza la proprieta' di monotonia. & 2
+%\int_{\frac{3\pi}{10}}^{\frac{\pi}{5}}  \sin(5x-\pi) \,dx & NONVA & 2
 \int_{0}^{\ln(2)} \frac{e^x}{(e^x-3)^2}   \,dx & Prova con il metodo di sostituzione! & 2
 \int_{1}^{2}  \frac{x}{\sqrt{1+x^2}}e^{\sqrt{1+x^2}}  \,dx & Prova con il metodo di sostituzione! & 2
-\int_{-1}^{2} xe^{|x|}\,dx & Prova per parti!,OCCHIO AL SEGNO & 2
+\int_{-1}^{2} xe^{|x|}\,dx & Prova per parti e occhio al segno! & 2
 \int_{0}^{1}  xe^x  \,dx & Prova per parti! & 2
 \int_{0}^{\pi} (x^2+1)\sin(x)  \,dx & Prova per parti! & 2
 \int_{0}^{\pi} x\cos(x)  \,dx & Prova per parti! & 2
 \int_{0}^{1} x\arctan(x)\,dx & Prova per parti! & 2
-\int_{0}^{5}  \frac{x}{x^2+1}  \,dx & SOSTITUZ,COSTRUISCI LA DERIVATA & 2
-\int_{1}^{2}   \frac{2x+3}{x+1} \,dx & DIVIDI IL POLINOMIO & 2
-\int_{0}^{1}  (2x+2) \arctan(x) \,dx & Prova per parti! & 2
-\int_{9}^{16}  \frac{\sqrt{x}-3}{x-3\sqrt{x}+2}  \,dx & SOSTITUZ/RAZIONALE  & 2
-\int_ {0}^{1}  x\cos (2 x) \, dx & Prova per parti!/SOSTIT & 2
-\int_{0}^{\frac{\pi}{4}}  \cos^2(x)\,dx & RISCRIVI IL COSENO E Prova con il metodo di sostituzione! & 2
-\int_{0}^{2}  \frac{\ln(2x+1)}{(2x+1)^2}  \,dx & Prova con il metodo di sostituzione!/Prova per parti!  & 2
-\int_{0}^{\sqrt{3}}  4|x-1|\arctan(x)  \,dx & Prova per parti!/RAZIONALI/OCCHIO AL SEGNO  & 2
-\int_{e}^{^3}   \frac{\ln(|x|)}{2x}-\frac{1}{x} \,dx & Prova con il metodo di sostituzione! & 2
+\int_{0}^{5}  \frac{x}{x^2+1}  \,dx & Costruisci la derivata del denominatore al numeratore. & 2
+\int_{1}^{2} \frac{2x+3}{x+1} \,dx & Effettua la divisione tra polinomi. & 2
+\int_{0}^{1} (2x+2) \arctan(x) \,dx & Prova per parti! & 2
+\int_{9}^{16} \frac{\sqrt{x}-3}{x-3\sqrt{x}+2}  \,dx & Prova con il metodo di sostituzione! & 2
+\int_ {0}^{1} x\cos (2 x) \, dx & Prova per parti e poi sostituzione. & 2
+\int_{0}^{\frac{\pi}{4}} \cos^2(x)\,dx & Riscrivi il coseno e prova con il metodo di sostituzione! & 2
+\int_{0}^{2}  \frac{\ln(2x+1)}{(2x+1)^2}  \,dx & Prova con il metodo di sostituzione e poi per parti!  & 2
+\int_{0}^{\sqrt{3}}  4|x-1|\arctan(x)  \,dx & Prova per parti e occhio al segno!  & 2
+\int_{e}^{e^3} \frac{\ln(|x|)}{2x}-\frac{1}{x} \,dx & Prova con il metodo di sostituzione! & 2
 \int_{0}^{1}  \frac{e^x}{e^{2x}+1}  \,dx & Prova con il metodo di sostituzione! & 2
-\int_{-1}^{1}  x^2\arctan(|2x|)  \,dx & SIMMETRICA/PER Prova per parti!/RAZIONALE & 2
-\int_{0}^{\frac{\pi}{4}}   \frac{3\tan(x)}{1+\cos^2(x)} \,dx & Prova con il metodo di sostituzione!/RAZIONALE & 2
-\int_{0}^{\pi}  \frac{3\cos(x)\sin(x)+4\sin(x)}{\sin^2(x)+2\cos^2(x)-\cos(x)}  \,dx & Prova con il metodo di sostituzione!/RAZIONALE & 2
-\int_{-2}^{2}  \frac{|x^2-|x^2+x||}{x^2+1}  \,dx & NONVA & 2
-\int_{1}^{0}  \frac{\arctan(\sqrt{x})}{\sqrt{x+1}}  \,dx & NONVA & 2
+\int_{-1}^{1}  x^2\arctan(|2x|)  \,dx & Utilizza al simmetria della funzione e dell'intervallo, poi prova per parti! & 2
+\int_{0}^{\frac{\pi}{4}}   \frac{3\tan(x)}{1+\cos^2(x)} \,dx & Prova con il metodo di sostituzione! & 2
+\int_{0}^{\pi}  \frac{3\cos(x)\sin(x)+4\sin(x)}{\sin^2(x)+2\cos^2(x)-\cos(x)}  \,dx & Prova con il metodo di sostituzione! & 2
+%\int_{-2}^{2}  \frac{|x^2-|x^2+x||}{x^2+1}  \,dx & NONVA & 2
+%\int_{1}^{0}  \frac{\arctan(\sqrt{x})}{\sqrt{x+1}}  \,dx & NONVA & 2
