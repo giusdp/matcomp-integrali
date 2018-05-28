@@ -400,7 +400,7 @@ allora una primitiva è" Framed[
         Red] "perchè la derivata di F(x) è \!\(\*SuperscriptBox[\(\
 \[ExponentialE]\), \(x\)]\)" ], 
    HoldForm[TraditionalForm[\[Integral]a^x \[DifferentialD]x]] -> 
- HoldForm["Se f(x) = \!\(\*SuperscriptBox[\(a\), \(x\)]\), allora la \
+ HoldForm["Se f(x) = \!\(\*SuperscriptBox[\(a\), \(x\)]\), allora una \
 primitiva è" Framed[
     "F(x) = \!\(\*FractionBox[SuperscriptBox[\(a\), \(x\)], \
 \(Log[a]\)]\)", 
@@ -420,3 +420,27 @@ primitiva è" Framed[
   Alignment -> Center, 
   BaseStyle -> { Large, FontFamily -> "Times", 24, Italic}], 
  Background -> LightYellow]
+
+grafico9::usage =" Grafico che spiega la proprieta` di additivita` dell'intervallo d'integrazione "
+(* grafico9 - proprieta` di additivita`*)
+
+grafico9 = Manipulate[
+ Show[Plot[x^3 - 8 x^2 + 80, {x, 0.2, 5}, Filling -> Axis, 
+   AxesOrigin -> {0, 0}, PlotRange -> {{-.28, 5.6}, {-10, 100}}, 
+   Ticks -> None, ImageSize -> 700, 
+   Epilog -> {Text[Style["a", 20, Bold], {0.2, -4}], 
+     Text[Style["b", 20, Bold], {5, -4}]}],
+          
+  Plot[x^3 - 8 x^2 + 80, {x, 0.2, ci}, Filling -> Axis, 
+   AxesOrigin -> {0, 0}, PlotRange -> {{-.28, 5.6}, {-10, 100}}, 
+   Ticks -> None, ImageSize -> 700, 
+   Epilog -> {Text[Style["a", 20, Bold], {0.2, -4}], 
+     Text[Style["b", 20, Bold], {5, -4}]}], 
+  Graphics[{Text[Style["c", 20, Bold], {ci, -4}], 
+    Text[Style[
+      TraditionalForm@
+       HoldForm[
+        Integrate[f[x], {x, a, b}] = 
+         Integrate[f[x], {x, a, c}] + Integrate[f[x], {x, c, b}]], 
+      20], {3, 85}]}]],
+ {{ci, 2.2, "Muovi il cursore c"}, .21, 5}]
