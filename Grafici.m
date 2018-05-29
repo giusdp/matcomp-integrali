@@ -1,5 +1,19 @@
-(*grafico1 - Grafico degli logaritmi*)
+(* Usages *)
 grafico1::usage = "Visualizza i tre grafici della funzione logaritmica, f(x)=log(x)"
+grafico2::usage = "Visualizza i tre grafici della funzione costante f(x) = 4"
+grafico3::usage = "Vizualizza i tre grafici della funzione lineare f(x) = x+1"
+grafico4::usage = "Visualizza i grafici di due curve"
+grafico5::usage = "Visualizza il procedimento per calcolare l'area sotto la curva dividendola in 4 rettangoli"
+grafico6::usage = "Visualizza il processo di calcolo dell'area sotto la curva dividentola in 10 rettangoli"
+plotMyChart::usage = "Funzione che visualizza il processo di calcolo dell'area sotto la curva dividendola in rettangoli sempre piu piccoli"
+grafico7::usage = "Mostra come si calcola graficamente l'area per la funzione f(x) = x^2 in due punti a e b"
+grafico8::usage = "Crea una TabView per visualizzare le funzione Sin(x), Cos(x), Exp(x) e Sqrt(x)"
+showMeInfo::usage = "Una piccola funzione che visualizza informazioni riguardanti l'ora e la data"
+whereAmI::usage = "Comando che visualizza la locazione dove ci si trova"
+tabViewInt::usage = "Visualizza una piccola tabella di integrali notevoli"
+grafico9::usage =" Grafico che spiega la proprieta` di additivita` dell'intervallo d'integrazione "
+
+(*grafico1 - Grafico degli logaritmi*)
 (* definisco i tre punti di rifferimento ossia sinistra, centro e desta*)
 
 align[Right] = {1, 0};
@@ -41,7 +55,6 @@ grafico1 = GraphicsRow[{plot0, Show[plot1, txt], Show[plot2, plot2a,txt]}, Image
 (* ********************************************************************************* *)
 
 (* grafico2 - Grafico di una funzione costante *)
-grafico2::usage = "Visualizza i tre grafici della funzione costante f(x) = 4"
 
 (* definisco i tre punti di rifferimento ossia sinistra, centro e desta*)
 lText = Text[Style["a", Blue, Bold, FontSize->20], {0.7, -0.3}, align[Left]];
@@ -72,7 +85,6 @@ grafico2 = GraphicsRow[{plot3, Show[plot4, txt2], Show[g1, g2, txt2]}, ImageSize
 (* ************************************************************************************* *)
 
 (* grafico3 - Grafico della funzione lineare f(x) = x+1 *)
-grafico3::usage = "Vizualizza i tre grafici della funzione lineare f(x) = x+1"
 
 lText = Text[Style["a", Blue, Bold, FontSize->20], {0.7, -0.2}, align[Left]];
 cText = Text[Style["Area", Blue, Bold, Underlined, FontSize->26], {2.9, 2}, align[Center]];
@@ -100,7 +112,6 @@ grafico3 = GraphicsRow[{plot3, Show[plot4, txt2], Show[g1, g2, txt2]}, ImageSize
 (* ************************************************************************************ *)
 
 (* grafico4 - aree delle curve *)
-grafico4::usage = "Visualizza i grafici di due curve"
 
 (* definizione della prima funzione f(x) = e^x *)
 f2[x_]:= E^x;
@@ -121,7 +132,6 @@ grafico4 = GraphicsRow[{plot5, plot6}, ImageSize->Full]
 (* ************************************************************************************ *)
 
 (*  grafico5 - procedimento di calcolare l'area sotto la curva dividendola in 4 rettangoli *)
-grafico5::usage = "Visualizza il procedimento per calcolare l'area sotto la curva dividendola in 4 rettangoli"
 
 lText = Text[Style["a", Blue, Bold, FontSize->20], {0.8, -0.7}, align[Left]];
 lTextt = Text[Style["x1", Blue, Bold, FontSize->20], {1.55, 0.4}, align[Left]];
@@ -160,7 +170,6 @@ grafico5 = GraphicsRow[{plott,Show[plott0, txt3], Show[plott1, g2, txt4]}, Image
 
 (*  grafico6 - mostra due grafici, nel primo ce la divisione del grafico in 10 segmenti uguali
     - nel secondo grafico abbiamo la divisone dell'area sottostante alla curva in 10 rettangoli *)
-grafico6::usage = "Visualizza il processo di calcolo dell'area sotto la curva dividentola in 10 rettangoli"
 
 Clear[txt3];
 Clear[txt4];
@@ -206,7 +215,6 @@ grafico6 = GraphicsRow[{Show[plott0, txt3], Show[plott1, g2, txt4]}, ImageSize->
 (* ********************************************************************************************** *)
 
 (* grafico dinamico della funzione f(x) = e^x *)
-plotMyChart::usage = "Funzione che visualizza il processo di calcolo dell'area sotto la curva dividendola in rettangoli sempre piu piccoli"
 
 (* definizione della funzione f(x) *)
 f[x_]:= E^x
@@ -228,7 +236,6 @@ Show[{colsum, curve}], {{nrettangoli,4}, 2, 80}]
 
 (*  grafico7 - grafico della funzione f(x) = x^2, [il mio primo integrale] 
     visualizzazione del grafico della funzione con l'area da calcolare colorata e delimitata dalle costant a e b *)
-    grafico7::usage = "Mostra come si calcola graficamente l'area per la funzione f(x) = x^2 in due punti a e b"
 
 leftText = Text[Style["a", Blue, Bold, FontSize->20], {0.85, -0.4}, align[Left]];
 centerText = Text[Style["Area", Blue, Bold, FontSize->26], {1.5, 1.2}, align[Center]];
@@ -321,27 +328,23 @@ d4 = DynamicModule[{pts = {{0, 0}, {4, 2}}},
 (****************************************************************************)
 
 (* Visualizza i grafici creare prima in una TabView *)
-grafico8::usage = "Crea una TabView per visualizzare le funzione Sin(x), Cos(x), Exp(x) e Sqrt(x)"
 grafico8 = TabView[{Seno[x] -> d1, Coseno[x] -> d2, Esponenziale[x] -> d3, 
   RadiceQuadrata[x] -> d4}, BaseStyle->{Orange, Bold, FontFamily->"Times"}, ImageSize->Automatic]
 
 (****************************************************************************)
 
 (*  showMeInfo - un comando che visualizza la data e il tempo corrente*)
-showMeInfo::usage = "Una piccola funzione che visualizza informazioni riguardanti l'ora e la data"
 
 showMeInfo = Dynamic[Refresh[DateString[], UpdateInterval -> 1]];
 
 (*****************************************************************************)
 
 (*  whereAmI - comando che setta le variabili di sistema $GeoLocationCity e $GeoLocationCountry per visualizzare dove ci si trova*)
-whereAmI::usage = "Comando che visualizza la locazione dove ci si trova"
 
 (*whereAmI = Print[$GeoLocationCity, ":" $GeoLocationCountry];*)
 
 (***********************************************************************************)
 (*tabViewInt - funzione che visualizza una tabella in forma di tab di integrali notevoli*)
-tabViewInt::usage = "Visualizza una piccola tabella di integrali notevoli"
 Clear[x]
 tabViewInt = Framed[TabView[{HoldForm[
      TraditionalForm[\[Integral]2 \[DifferentialD]x]] -> 
@@ -421,7 +424,6 @@ primitiva è" Framed[
   BaseStyle -> { Large, FontFamily -> "Times", 24, Italic}], 
  Background -> LightYellow]
 
-grafico9::usage =" Grafico che spiega la proprieta` di additivita` dell'intervallo d'integrazione "
 (* grafico9 - proprieta` di additivita`*)
 
 grafico9 = Manipulate[

@@ -1,5 +1,13 @@
 <<"Soluzioni_guidate.m";
+prendiACaso::usage = "Funzione per ottenere un esercizio random da una lista di esercizi."
 
+mostraEsercizio::usage = "Funzione che data una lista di esercizi, ne estrae uno random e lo mostra all'utente insieme
+a due bottoni. Il primo apre una finestra con il suggerimento per risolvere l'esercizio, il secondo apre una finestra
+con la soluzione passo passo ottenuta da WolframAlpha. Serve una connessione ad internet attiva per questo."
+
+caricaEsercizi::usage = "Funzione che carica esercizi dal file esercizi_misti.txt e ritorna una lista con gli esercizi.
+Un esercizio è a sua volta una lista di 3 elementi. Il primo è una stringa contenente la traccia in latex, il secondo è la stringa
+suggerimento, il terzo è il tipo di integrale. 1: indefinitio, 2: defintito."
 (*
 Qui sono definite le funzioni per fornire esercizi casuali all'utente.
 CaricaEsercizi si occupa di prendere gli esercizi da un file. Il file deve
@@ -13,15 +21,11 @@ Il carattere '&' è utilizzato per separare traccia a suggerimento a tipo.
 Inoltre il carattere '%' inserito all'inizio della riga fa ignorare la riga.
 *)
 
-prendiACaso::usage = "Funzione per ottenere un esercizio random da una lista di esercizi."
 prendiACaso[esercizi_] := Module[{rand, es},
     rand = RandomInteger[{1, Length[esercizi]}]; (*Ottieni un numero random che va da 1 al totale degli esercizi*)
     es = Extract[esercizi, rand]; (*Estrai l'esercizio indicato dal numero random dalla lista di esercizi*)
     Return[es]]
 
-mostraEsercizio::usage = "Funzione che data una lista di esercizi, ne estrae uno random e lo mostra all'utente insieme
-a due bottoni. Il primo apre una finestra con il suggerimento per risolvere l'esercizio, il secondo apre una finestra
-con la soluzione passo passo ottenuta da WolframAlpha. Serve una connessione ad internet attiva per questo."
 mostraEsercizio[esercizi_] := CreateDialog[
     Module[{esex, traccia, wolfram, tipo, sol}, 
         esex = prendiACaso[esercizi]; (*Si prende un esercizio a caso con la funzione definita sopra. *)
@@ -50,9 +54,6 @@ mostraEsercizio[esercizi_] := CreateDialog[
     ]
 ]
 
-caricaEsercizi::usage = "Funzione che carica esercizi dal file esercizi_misti.txt e ritorna una lista con gli esercizi.
-Un esercizio è a sua volta una lista di 3 elementi. Il primo è una stringa contenente la traccia in latex, il secondo è la stringa
-suggerimento, il terzo è il tipo di integrale. 1: indefinitio, 2: defintito. "
 caricaEsercizi[] := Module[{exs},
     exs = {};
     f = OpenRead["esercizi_misti.txt"]; (*Apre il file*)
