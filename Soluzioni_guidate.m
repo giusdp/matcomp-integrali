@@ -1,5 +1,9 @@
 <<MaTeX`
 
+Sol1::usage = "Mostra la soluzione passo passo in una nuova finestra dell'esempio 1."
+(* Sol1 è la finestra con la soluzione del primo esempio a cui vogliamo mostrare passo passo la soluzione.
+E' costituita da una PopupWindow aperta tramite il Button "Vuoi vedere la soluzione?". Ed apre una TabView
+dove ogni tab è un passo della soluzione con qualche informazione su come ci si è arrivati. *)
 Sol1 = PopupWindow[
     Button[Style["Vuoi vedere la soluzione?", FontSize->Large]],
 
@@ -29,6 +33,10 @@ Sol1 = PopupWindow[
 
     WindowTitle->"Soluzione Guidata", WindowSize->All]
 
+Sol2::usage = "Mostra la soluzione passo passo in una nuova finestra dell'esempio 2"
+(* Sol2 è la finestra con la soluzione del primo esempio a cui vogliamo mostrare passo passo la soluzione.
+E' costituito da una popup window aperta tramite il Button "Vuoi vedere la soluzione?". Ed apre una TabView
+dove ogni tab è un passo della soluzione con qualche informazione su come ci si è arrivati. *)
 Sol2 = PopupWindow[ 
     Button[Style["Vuoi vedere la soluzione?", FontSize->Large]],
 
@@ -55,17 +63,8 @@ Sol2 = PopupWindow[
     
     WindowTitle->"Soluzione Guidata", WindowSize->All];
 
-
-(*
-indefinitiStepByStep[integrand_] := WolframAlpha[StringJoin["integrate ", integrand], {{"IndefiniteIntegral", 2}, "Content"},
- PodStates -> {"IndefiniteIntegral__Step-by-step solution"}];
-
-definitiStepByStep[integrand_] := WolframAlpha[StringJoin["integrate ", integrand], {{"Input", 2}, "Content"}, PodStates -> {"Input__Step-by-step solution"}];
-
-definitiStepByStepNascosto[integrand_] := WolframAlpha[StringJoin["integrate ",integrand], IncludePods -> "Input", AppearanceElements -> {"Pods"}, PodStates -> {"Show steps"}];
-*)
-
-
+stepIndefiniteFunction::usage = "Utilizza WolframAlpha per mostrare la soluzione dell'integrale indefinito passato
+in input. La soluzione viene mostrata in una nuova finestra. Serve una connessione ad internet attiva."
 (* Funzione step-by-step a cui passare stringa per integrali indefiniti *)
 stepIndefiniteFunction[integrand_] := CreateDialog[
    Column[{WolframAlpha[integrand, {{"IndefiniteIntegral", 2}, "Content"},
@@ -73,6 +72,9 @@ stepIndefiniteFunction[integrand_] := CreateDialog[
      DefaultButton["Close", DialogReturn[]]}], WindowTitle -> "Soluzione Guidata!", 
      WindowSize -> {500, 700}, Modal -> True, WindowElements -> "VerticalScrollBar"];
 
+
+stepDefiniteFunction::usage = "Utilizza WolframAlpha per mostrare la soluzione dell'integrale definito passato
+in input. La soluzione viene mostrata in una nuova finestra. Serve una connessione ad internet attiva."
 (* Funzione step-by-step a cui passare stringa per integrali definiti *)
 stepDefiniteFunction[integrand_] := CreateDialog[
    Column[ { 
