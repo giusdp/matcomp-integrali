@@ -1,0 +1,5 @@
+(* Comandi per aggiungere matex a mathematica. Bisogna avere installato sul computer Latex e Ghostscript.
+Su Linux e Mac, Latex integra GhostScript, quindi basta installare solo il primo.*)
+<<["PacletManager`"];
+PacletInstall["MaTeX-1.7.3.paclet"];
+<<["MaTeX`"];

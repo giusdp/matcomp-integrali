@@ -1,4 +1,8 @@
-% Puoi commentare le righe con '%' all'inizio, se vuoi lasciare righe vuote devi comunque aggiungere %
+% Puoi commentare le righe mettendo '%' all'inizio, se vuoi lasciare righe vuote devi comunque aggiungere %
+% Lista esercizi. Ogni riga è un esercizio.
+% Ogni esercizio è composta da 3 parti separate da '&'. La prima parte è la traccia scritta in latex, usata per mostrare l'esercizio e per invocare Wolfram Alpha.
+% La seconda parte è il suggerimento da dare all'utente
+% La terza parte indica il tipo di integrale, usato per identificare qualche chiamata a Wolfram Alpha usare.
 % Il tipo di integrale è rappresentato da 1 e 2.
 %    1 : integrale indefinito
 %    2 : integrale definito
