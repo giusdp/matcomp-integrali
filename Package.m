@@ -1,9 +1,24 @@
 (* ::Package:: *)
 
 (* ::Input::Initialization:: *)
-BeginPackage["Funzioni`"]
-Unprotect@@Names["Funzioni`*"];
-ClearAll@@Names["Funzioni`*"];
+(* PACKAGE.M
+ * Progetto d'esame di Matematica Computazionale + Calcolo Numerico e Software Didattico
+ * Corsi di laurea magistrale in Informatica e Matematica
+ * Anno accademico 2017/2018
+ * 
+ * Autori:
+ *   Tommaso Saracchini, Domenico Coriale, Giuseppe De Palma, Eduart Uzeir
+ *
+ * Versione di sviluppo e testing: Wolfram Mathematica 11.2
+ *)
+
+(* Inizio del package *)
+
+(* Usage prima del private *)
+paletteFormula::usage = "Tabella delle formule di integrazione.";
+singlePopup::usage = "Funzione che inibisce il doppio clic dei botoni";
+
+(* Download ed update del Packlet di MaTeX, in caso non ci fosse *)
 (*
 updateMaTeX[] :=
   Module[{json, download, target},
@@ -24,110 +39,116 @@ updateMaTeX[] :=
 
 updateMaTeX[]
 *)
+
 Needs["PacletManager`"]
 PacletInstall["MaTeX-1.7.3.paclet", IgnoreVersion->True]
 Needs["MaTeX`"]
-ConfigureMaTeX[
- "pdfLaTeX" -> "/usr/bin/pdflatex", 
- "Ghostscript" -> "/usr/bin/ghostscript", "CacheSize" -> 100, "WorkingDirectory" -> Automatic
- ]
+(* Funziona che controlla il sistema operativo e setta il path di MaTeX *)
+checkSystem = If[StringMatchQ["Windows",$OperatingSystem], 
+ConfigureMaTeX["pdfLaTeX"->"C:\\Program Files\\MiKTeX 2.9\\tex\\latex\\00miktex\\pdflatex.exe",
+"Ghostscript"->"C:\\Program Files\\gs\\gs9.20\\bin\\gswin64c.exe", "CacheSize" -> 100, 
+"WorkingDirectory" -> Automatic], 
+If[StringMatchQ["Unix",$OperatingSystem], ConfigureMaTeX["pdfLaTeX" -> "/usr/bin/pdflatex",
+ "Ghostscript" -> "/usr/bin/ghostscript", "CacheSize" -> 100, "WorkingDirectory" -> Automatic], 
+ ConfigureMaTeX["pdfLaTeX" -> "/Library/TeX/texbin/pdflatex",
+ "Ghostscript" -> "/usr/local/bin/gs", "CacheSize" -> 100,"WorkingDirectory" -> Automatic
+]]];
 
+(* Import degli altri packages *)
+(* Package per la scrittura delle formule tramite codice latex *)
+<<MaTeX`;
+(* Package contenente i gradici *)
+<<"Grafici.m";
+(* Package contenente le formule per le soluzioni guidate *)
+<<"Soluzioni_guidate.m";
 
+(* Funzione che inibisce il doppio clic dei botoni *)
+singlePopup[pw_]:=With[{p=Unique["popup"]},pw/.Button[a_,b_,c___]:>Button[a,If[!ValueQ[p]||NotebookInformation[p]==$Failed,p=b],c]]
 
-walkD::usage = "walkD[f,x]"
-walkInt::usage = "walkInt[f,x]"
+(* Palette delle formule di integrazione creato con codice latex*)
+paletteFormula := 
+  CreatePalette[
+   Panel[Grid[{{MaTeX[HoldForm[\[Integral] \[DifferentialD]x = x + c],
+         Magnification -> 2], SpanFromLeft(*,MaTeX[HoldForm[Integrate[
+       k * f[x],x] = k * Integrate[f[x],x]],Magnification\[Rule]2], 
+       SpanFromLeft *)}, {}, {MaTeX[
+        HoldForm[\[Integral]x^n \[DifferentialD]x = 
+          x^ (n + 1) + c "," (n != -1)], Magnification -> 2], 
+       SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral](f[x])^n * 
+            f'[x] \[DifferentialD]x = (1/(n + 1) )* (f[x])^(n + 1) + 
+           c], Magnification -> 2], SpanFromLeft}, {},(*{MaTeX[
+      HoldForm[\[Integral]1/(2\[Sqrt]x)\[DifferentialD]x= \[Sqrt]x +
+      c ],Magnification\[Rule]2],SpanFromLeft, MaTeX[
+      HoldForm[\[Integral](f'[x])*1/(2*\[Sqrt]f[
+      x]) \[DifferentialD]x = \[Sqrt]f[x] + c],Magnification\[Rule]2],
+      SpanFromLeft},{},*){MaTeX[
+        HoldForm[\[Integral]Sin[x] \[DifferentialD]x = - Cos[x] + c], 
+        Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral]Sin[f[x]] * 
+            f'[x] \[DifferentialD]x = - Cos[f[x]] + c], 
+        Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]Cos[x] \[DifferentialD]x = Sin[x] + c ], 
+        Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral]Cos[f[x]] * 
+            f'[x] \[DifferentialD]x = Sin[f[x]] + c], 
+        Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]1/Cos[x]^2 \[DifferentialD]x = 
+          Tan[x] + c ], Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral]1/Cos[f[x]]^2 * 
+            f'[x] \[DifferentialD]x = Tan[f[x]] + c], 
+        Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]1/Sin[x]^2 \[DifferentialD]x = - Cot[x] + 
+           c ], Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral]1/Sin[f[x]]^2 * 
+            f'[x] \[DifferentialD]x = - Cot[f[x]] + c], 
+        Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]1/\[Sqrt](1 - x^2) \[DifferentialD]x =  
+          ArcSin[x] + c ], Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral]f'[x] /
+             Sqrt[1 - f[x]^2 ] \[DifferentialD]x = -ArcSin[f[x]] + c],
+         Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]1/(1 + x^2) \[DifferentialD]x = 
+          ArcTan[x] + c ], Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral] 
+           f'[x]/(1 + f[x]^2) \[DifferentialD]x = ArcTan[f[x]] + c], 
+        Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral] 1/x \[DifferentialD]x = Log[Abs[x]] + c],
+         Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral] f'[x]/f[x] \[DifferentialD]x = 
+          Log[Abs[f[x]]] + c], Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral] e^x \[DifferentialD]x = e^x + c], 
+        Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral] e^f[x] * f'[x] \[DifferentialD]x = 
+          e^f[x] + c], Magnification -> 2], 
+       SpanFromLeft}, {}, (* {MaTeX[HoldForm[\[Integral]a^
+      x \[DifferentialD]x = a^x/Log[a] + c],Magnification\[Rule]2],
+      SpanFromLeft,MaTeX[HoldForm[\[Integral] a^f[x] * f'[
+      x] \[DifferentialD]x = a^f[x]/Log[a] + c],
+      Magnification\[Rule]2],
+      SpanFromLeft},{}, *){MaTeX[
+        HoldForm[\[Integral](x + a)^
+             m \[DifferentialD]x = (x + a)^(m + 1)/(m + 1) + c], 
+        Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral] (a + bx)^
+             n  \[DifferentialD]x = (a + bx)^(n + 1)/(b*(n + 1)) + c],
+         Magnification -> 2], 
+       SpanFromLeft}, {}, {MaTeX[
+        HoldForm[\[Integral]1/(a^2 + x^2) \[DifferentialD]x = 
+          1/a * ArcTan[x/a] + c], Magnification -> 2], SpanFromLeft, 
+       MaTeX[HoldForm[\[Integral] 
+           f'[x]/(f[x]^2 + a^2)   \[DifferentialD]x = 
+          1/a * ArcTan[f[x]/a] + c], Magnification -> 2], 
+       SpanFromLeft}}, 
+     Background -> {Automatic, {{LightOrange, LightYellow}}}, 
+     Frame -> All, FrameStyle -> Directive[Red, Dotted]], 
+    Appearance -> "Palette"], WindowElements -> "VerticalScrollBar", WindowTitle-> "Tabella Integrali"];
 
-Begin["`Private`"]
-
-Format[d[f_,x_],TraditionalForm]:=Module[{paren,boxes},paren=MatchQ[f,Plus[_,__]];
-boxes=RowBox[{f}];
-If[paren,boxes=RowBox[{"(",boxes,")"}]];
-boxes=RowBox[{FractionBox["\[DifferentialD]",RowBox[{"\[DifferentialD]",x}]],boxes}];
-DisplayForm[boxes]];
-
-dSpecificRules={d[x_,x_]:>1,d[(f_)[x_],x_]:>D[f[x],x],d[(a_)^(x_),x_]:>D[a^x,x]/;FreeQ[a,x]};
-
-dConstantRule=d[c_,x_]:>0/;FreeQ[c,x];
-
-dLinearityRule={d[f_+g_,x_]:>d[f,x]+d[g,x],d[c_ f_,x_]:>c d[f,x]/;FreeQ[c,x]};
-
-dPowerRule={d[x_,x_]:>1,d[(x_)^(a_),x_]:>a*x^(a-1)/;FreeQ[a,x]};
-
-dProductRule=d[f_ g_,x_]:>d[f,x] g+f d[g,x];
-
-dQuotientRule=d[(f_)/(g_),x_]:>(d[f,x]*g-f*d[g,x])/g^2;
-
-dInverseFunctionRule:=d[InverseFunction[f_][x_],x_]:>1/Derivative[1][f][InverseFunction[f][x]];
-
-dChainRule={d[(f_)^(a_),x_]:>a*f^(a-1)*d[f,x]/;FreeQ[a,x],d[(a_)^(f_),x_]:>Log[a]*a^f*d[f,x]/;FreeQ[a,x],d[(f_)[g_],x_]:>(D[f[x],x]/.x->g)*d[g,x],d[(f_)^(g_),x_]:>f^g*d[g*Log[f],x]};
-
-$dRuleNames={"Specific Rules","Constant Rule","Linearity Rule","Power Rule","Quotient Rule","Product Rule","Inverse Function Rule","Chain Rule"};
-
-displayStart[expr_]:=CellPrint[Cell[BoxData[MakeBoxes[HoldForm[expr],TraditionalForm]],"Output",Evaluatable->False,CellMargins->{{Inherited,Inherited},{10,10}},CellFrame->False,CellEditDuplicate->False]];
-
-displayDerivative[expr_,k_Integer]:=CellPrint[Cell[BoxData[TooltipBox[RowBox[{InterpretationBox["=",Sequence[]],"  ",MakeBoxes[HoldForm[expr],TraditionalForm]}],"Differentation: "<>$dRuleNames[[k]],LabelStyle->"TextStyling"]],"Output",Evaluatable->False,CellMargins->{{Inherited,Inherited},{10,10}},CellFrame->False,CellEditDuplicate->False]];
-
-walkD::differentationError="Failed to differentiate expression!";
-
-walkD[f_,x_]:=Module[{derivative,oldderivative,k},derivative=d[f,x];displayStart[derivative];
-While[!FreeQ[derivative,d],oldderivative=derivative;k=0;
-While[oldderivative==derivative,k++;
-If[k>Length@$dRuleNames,Message[walkD::differentationError];
-Return[D[f,x]];];
-derivative=derivative/.ToExpression["d"<>StringReplace[$dRuleNames[[k]]," "->""]]];
-displayDerivative[derivative,k]];
-D[f,x]];
-
-
-Format[int[f_,x_],TraditionalForm]:=(paren=MatchQ[f,Plus[_,__]];
-boxes=RowBox[{f}];
-If[paren,boxes=RowBox[{"(",boxes,")"}]];
-boxes=RowBox[{boxes,"\[DifferentialD]",x}];
-boxes=RowBox[{"\[Integral]",boxes}];
-DisplayForm[boxes]);
-
-intSpecificRules={int[(f_)[x_],x_]:>Integrate[f[x],x],int[(a_)^(x_),x_]:>Integrate[a^x,x]/;FreeQ[a,x]};
-
-intConstantRule=int[c_,x_]:>c*x/;FreeQ[c,x];
-
-intLinearityRule={int[f_+g_,x_]:>int[f,x]+int[g,x],int[c_ f_,x_]:>c int[f,x]/;FreeQ[c,x]};
-
-intPowerRule={int[x_,x_]:>x^2/2,int[1/x_,x_]:>Log[x],int[(x_)^(a_),x_]:>x^(a+1)/(a+1)/;FreeQ[a,x]};
-
-intSubstitutionRule={int[(f_)^(a_),x_]:>((Integrate[u^a,u]/d[f,x])/.u->f)/;FreeQ[a,x]&&FreeQ[D[f,x],x],int[(f_)^(a_) g_,x_]:>((Integrate[u^a,u]/d[f,x])*g/.u->f)/;FreeQ[a,x]&&FreeQ[FullSimplify[D[f,x]/g],x],int[(a_)^(f_),x_]:>(a^f)/(d[f,x]*Log[a])/;FreeQ[a,x]&&FreeQ[D[f,x],x],int[(a_)^(f_) g_,x_]:>(a^f)/(d[f,x]*Log[a])*g/;FreeQ[a,x]&&FreeQ[FullSimplify[D[f,x]/g],x],int[(f_)[g_],x_]:>(Integrate[f[u],u]/.u->g)/d[g,x]/;FreeQ[D[g,x],x],int[(f_)[g_] h_,x_]:>(Integrate[f[u],u]/.u->g)/d[g,x]*h/;FreeQ[FullSimplify[D[g,x]/h],x]};
-
-intProductRule=int[f_ g_,x_]:>int[f,x] g-int[int[f,x]*d[g,x],x];
-
-$intRuleNames={"Specific Rules","Constant Rule","Linearity Rule","Power Rule","Substitution Rule","Product Rule"};
-
-displayIntegral[expr_,k_Integer]:=CellPrint[Cell[BoxData[TooltipBox[RowBox[{InterpretationBox["=",Sequence[]],"  ",MakeBoxes[HoldForm[expr],TraditionalForm]}],"Integration: "<>$intRuleNames[[k]],LabelStyle->"TextStyling"]],"Output",Evaluatable->False,CellMargins->{{Inherited,Inherited},{10,10}},CellFrame->False,CellEditDuplicate->False]];
-
-walkInt::integrationError="Failed to integrate expression!";
-walkInt::differentationError="Failed to differentiate expression!";
-
-walkInt[f_,x_]:=Module[{integral,oldintegral,k,leafcounts,ruleused},integral=int[f,x];displayStart[integral];
-leafcounts={};
-ruleused="";
-While[!FreeQ[integral,int],If[ruleused=="Product Rule",AppendTo[leafcounts,LeafCount@integral];
-If[Length@leafcounts>=5&&OrderedQ@Take[leafcounts,-5],Message[walkInt::integrationError];
-Return[Integrate[f,x]];];];
-oldintegral=integral;k=0;
-While[oldintegral==integral,k++;
-If[k>Length@$intRuleNames,Message[walkInt::integrationError];
-Return[Integrate[f,x]];];
-integral=integral/.ToExpression["int"<>StringReplace[$intRuleNames[[k]]," "->""]]];
-ruleused=$intRuleNames[[k]];
-displayIntegral[integral,k];
-While[!FreeQ[integral,d],oldintegral=integral;k=0;
-While[oldintegral==integral,k++;
-If[k>Length@$dRuleNames,Message[walkInt::differentationError];
-Return[Integrate[f,x]];];
-integral=integral/.ToExpression["d"<>StringReplace[$dRuleNames[[k]]," "->""]]];
-displayDerivative[integral,k]];];
-Integrate[f,x]];
-
-f[x_]:=Module[{},x^2];
-
-End[]
-Protect@@Names["Funzioni`*"];
-EndPackage[]
+(* Fine del package*)
