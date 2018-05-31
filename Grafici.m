@@ -224,13 +224,20 @@ f[x_]:= E^x
     plotMyChart[], pernde in input un numero che rappresenta il numero di rettangoli da dividere l'area sotto la funzione *)
 
 plotMyChart[nrettangoli_] := Module[{}, low = 0; high = 2;
-delta = (high - low)/nrettangoli;
-colsum = Graphics[{FaceForm[{Opacity[0.7]}], Table[{Hue[1, 0.6, 0.8], EdgeForm[Thin],
-Rectangle[{low + n * delta, 0}, {low + (n + 1) * delta, f[low + n * delta]}]}, {n, 1, nrettangoli}]}, ImageSize->500, AspectRatio->1];
-curve=Plot[f[x], {x, low, high}, PlotStyle->Thick, ImageSize->60];];
-Manipulate[plotMyChart[nrettangoli];
-(* Visualizza il grafico *)
-Show[{colsum, curve}], {{nrettangoli,4}, 2, 80}]
+   delta = (high - low)/nrettangoli;
+   colsum = 
+    Graphics[{FaceForm[{Opacity[0.7]}], 
+      Table[{Hue[1, 0.6, 0.8], EdgeForm[Thin], 
+        Rectangle[{low + n*delta, 0}, {low + (n + 1)*delta, 
+          f[low + n*delta]}]}, {n, 1, nrettangoli}]}, 
+     ImageSize -> 600, AspectRatio -> 1];
+   curve = 
+    Plot[f[x], {x, low, high}, PlotStyle -> Thick, 
+     ImageSize -> 60];];
+showMyChart = Manipulate[plotMyChart[nrettangoli];
+ (*Visualizza il grafico*)
+ Show[{colsum, curve}], {{nrettangoli, 4}, 2, 80}, {nrettangoli, 
+  ControlType -> InputField}, LabelStyle -> {Orange, Bold, 20}]
 
 (* ************************************************************************************************ *)
 
@@ -292,38 +299,38 @@ d2 = DynamicModule[{pts = {{- Pi/2, 0}, {Pi/2, 0}}},
 (* Terzo grafico per la funzione Exp(x) *)
 g[x_] := E^x;
 d3 = DynamicModule[{pts = {{0, 1}, {1, E}}}, 
-   LocatorPane[
-    Dynamic[pts, (pts[[1]] = {#[[1, 1]], 0}; 
+   LocatorPane[Dynamic[pts, (pts[[1]] = {#[[1, 1]], 0};
        pts[[2]] = {#[[2, 1]], 0}) &], 
-    Dynamic[Framed@Show@{Plot[g@x, {x, 0, 1},
+    Dynamic[Framed@
+      Show@{Plot[g@x, {x, 0, 1}, 
          PlotLabel -> 
           ToString@
             StandardForm[
-             Integrate[f[x]@x, {x, pts[[1, 1]], pts[[2, 1]]}]] <> 
+             Integrate[EXP[x], {x, pts[[1, 1]], pts[[2, 1]]}]] <> 
            " = " <> 
            ToString@
             StandardForm[
-             Integrate[g@x, {x, pts[[1, 1]], pts[[2, 1]]}]],
-         ImageSize -> 800],
+             Integrate[g@x, {x, pts[[1, 1]], pts[[2, 1]]}]], 
+         ImageSize -> 800], 
         Plot[g@x, {x, pts[[1, 1]], pts[[2, 1]]}, Filling -> 1]}]]];
 (****************************************************************************)
 
 (* Quarto grafico per la funzione RadiceQuadrata(x) *)
 h[x_] := Sqrt[x];
 d4 = DynamicModule[{pts = {{0, 0}, {4, 2}}}, 
-   LocatorPane[
-    Dynamic[pts, (pts[[1]] = {#[[1, 1]], 0}; 
+   LocatorPane[Dynamic[pts, (pts[[1]] = {#[[1, 1]], 0};
        pts[[2]] = {#[[2, 1]], 0}) &], 
-    Dynamic[Framed@Show@{Plot[h@x, {x, 0, 4},
+    Dynamic[Framed@
+      Show@{Plot[h@x, {x, 0, 4}, 
          PlotLabel -> 
           ToString@
             StandardForm[
-             Integrate[H[x], {x, pts[[1, 1]], pts[[2, 1]]}]] <> 
+             Integrate[SQRT[x], {x, pts[[1, 1]], pts[[2, 1]]}]] <> 
            " = " <> 
            ToString@
             StandardForm[
-             Integrate[h@x, {x, pts[[1, 1]], pts[[2, 1]]}]],
-         ImageSize -> 800],
+             Integrate[h@x, {x, pts[[1, 1]], pts[[2, 1]]}]], 
+         ImageSize -> 800], 
         Plot[h@x, {x, pts[[1, 1]], pts[[2, 1]]}, Filling -> 0]}]]];
 (****************************************************************************)
 
