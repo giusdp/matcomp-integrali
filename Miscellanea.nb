@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   1466812,      24940]
-NotebookOptionsPosition[   1454007,      24678]
-NotebookOutlinePosition[   1457652,      24757]
-CellTagsIndexPosition[   1457271,      24743]
+NotebookDataLength[   1467366,      24946]
+NotebookOptionsPosition[   1454561,      24684]
+NotebookOutlinePosition[   1458206,      24763]
+CellTagsIndexPosition[   1457825,      24749]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21059,11 +21059,12 @@ Cell["Errori del Private:", "Subsection",
 Cell[TextData[{
  "\n",
  StyleBox["Abbiamo riscontrato diversi errori nel tentativo di utilizzare il \
-Private per i package dovuti, molto probabilmente, a due fattori. Entrambi i \
-fattori sono accomunati da un problema di visibilit\[AGrave]: infatti grazie \
-al private rendiamo le nostre variabili private, modificandole ed \
-utilizzandole nello spazio privato, ma rendendole di fatto inaccessibili ad \
-un livello superiore, necessario per l\[CloseCurlyQuote]utilizzo di ",
+Private per i package dovuti, molto probabilmente, a due fattori, entrambi  \
+accomunati da un problema di visibilit\[AGrave]: infatti grazie al private \
+rendiamo le nostre variabili private, ovvero rendendole accessibili, \
+modificabili ed utilizzabili nello spazio privato, ma rendendole di fatto \
+inaccessibili ad un livello superiore, necessario per \
+l\[CloseCurlyQuote]utilizzo di ",
   FontFamily->"Verdana",
   FontSize->26,
   FontWeight->"Regular",
@@ -21085,7 +21086,10 @@ un livello superiore, necessario per l\[CloseCurlyQuote]utilizzo di ",
   FontWeight->"Regular",
   FontColor->RGBColor[
    0.9773098344396124, 0.41599145494773787`, 0.049774929427023724`]],
- StyleBox[". ",
+ StyleBox[". Per questo motivo, data la necessit\[AGrave] dell\
+\[CloseCurlyQuote]utilizzo di quei due strumenti, abbiamo scelto di rendere \
+tutte le nostre variabili e funzioni pubbliche per evitare di incorrere in \
+problemi di visibilit\[AGrave] delle variabili.",
   FontFamily->"Verdana",
   FontSize->26,
   FontWeight->"Regular",
@@ -21093,9 +21097,12 @@ un livello superiore, necessario per l\[CloseCurlyQuote]utilizzo di ",
 }], "Text",
  CellChangeTimes->{{3.7369228077071867`*^9, 3.736922898466975*^9}, {
    3.736922987860216*^9, 3.7369230130508204`*^9}, {3.736923059098915*^9, 
-   3.736923168651589*^9}, 
-   3.736923311997221*^9},ExpressionUUID->"7c8bc8c8-794a-4bb5-b7b7-\
-582970a976d7"],
+   3.736923168651589*^9}, 3.736923311997221*^9, {3.7369443124841347`*^9, 
+   3.7369443397642593`*^9}, {3.736945112184998*^9, 3.736945128895973*^9}, {
+   3.736945631120401*^9, 3.73694565169619*^9}, {3.736945683825426*^9, 
+   3.7369457839947557`*^9}, {3.736946895220405*^9, 3.73694691354095*^9}},
+ TextAlignment->Left,
+ TextJustification->0.,ExpressionUUID->"7c8bc8c8-794a-4bb5-b7b7-582970a976d7"],
 
 Cell[CellGroupData[{
 
@@ -22887,14 +22894,13 @@ Cell["Lavoro Futuro", "Section",
   "FutureWork",ExpressionUUID->"f4e897d9-3cd3-4805-9c4b-7ea2b2375f86"],
 
 Cell[TextData[StyleBox["\n-Estendere la teoria per integrali impropri e \
-integrali a piu\[CloseCurlyQuote] variabili,\n-Implementare la funzione \
-\[OpenCurlyDoubleQuote]Step by step\[CloseCurlyDoubleQuote] anche in modalita\
-\[CloseCurlyQuote] offline,\n-Introdurre piu\[CloseCurlyQuote] animazioni e \
-rendere piu\[CloseCurlyQuote] dinamiche tabelle e grafici,\n-Mettere un test \
-di tipo quiz a fine progetto per valutare l\[CloseCurlyQuote]utente,\n\
--Ristrutturare gli esercizi presentati con un approccio piu\[CloseCurlyQuote] \
-algoritmico mostrando una procedura che lo studente deve seguire passo per \
-passo.",
+integrali a pi\[UGrave] variabili;\n-Implementare la funzione \
+\[OpenCurlyDoubleQuote]Step by step\[CloseCurlyDoubleQuote] anche in modalit\
+\[AGrave] offline;\n-Introdurre pi\[UGrave] animazioni e rendere pi\[UGrave] \
+dinamiche tabelle e grafici;\n-Mettere un test di tipo quiz a fine progetto \
+per valutare l\[CloseCurlyQuote]utente;\n-Ristrutturare gli esercizi \
+presentati con un approccio pi\[UGrave] algoritmico \n  mostrando una \
+procedura che lo studente deve seguire passo per passo.",
  FontFamily->"Verdana",
  FontSize->26,
  FontWeight->"Regular",
@@ -22905,7 +22911,7 @@ passo.",
    3.7367654658449993`*^9}, {3.736765558386314*^9, 3.7367655889279013`*^9}, {
    3.736772135989209*^9, 3.736772136602623*^9}, 3.736936443119658*^9, {
    3.73693649527843*^9, 3.7369367766545477`*^9}, {3.7369368453525057`*^9, 
-   3.736936904334343*^9}},
+   3.736936904334343*^9}, {3.736943722242669*^9, 3.736943770712768*^9}},
  TextAlignment->Left,
  TextJustification->0.,ExpressionUUID->"d29e6e25-b745-4499-bbc6-3092270e3bcc"],
 
@@ -24676,8 +24682,8 @@ jr2JSvcjb9X/9kj97EOcceA5z6qv267++86K5+xR//lARF4fUP+/X+Fr8LX1
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{Full, Full},
-WindowMargins->{{57, Automatic}, {Automatic, 9}},
+WindowSize->{1124, 578},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
 TaggingRules->{"SlideShow" -> True},
 ShowCellTags->True,
 FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
@@ -24690,6 +24696,30 @@ StyleDefinitions->FrontEnd`FileName[{"SlideShow"}, "Sunrise.nb",
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
+ "FutureWork"->{
+  Cell[1347091, 22887, 280, 6, 141, "Section",ExpressionUUID->"f4e897d9-3cd3-4805-9c4b-7ea2b2375f86",
+   CellTags->"FutureWork"]},
+ "Index"->{
+  Cell[111395, 1905, 216, 3, 305, "Title",ExpressionUUID->"fee2d7ef-1786-4171-b76e-defdb15f8ade",
+   CellTags->"Index"]},
+ "MainBibliografia"->{
+  Cell[118314, 2127, 234, 5, 159, "Section",ExpressionUUID->"81e3e906-16ad-466f-83ef-9d82593e0948",
+   CellTags->"MainBibliografia"]},
+ "MainError"->{
+  Cell[227049, 3969, 302, 6, 159, "Section",ExpressionUUID->"75ae125d-b274-43a9-88ca-e04644dab30b",
+   CellTags->"MainError"]},
+ "MatexError"->{
+  Cell[341044, 6020, 306, 7, 159, "Section",ExpressionUUID->"e2778065-d17f-43dc-a941-d98f109fe09e",
+   CellTags->"MatexError"]},
+ "MixError"->{
+  Cell[913969, 15614, 301, 6, 159, "Section",ExpressionUUID->"dd33eac3-8073-4aec-a68f-2cce04b14351",
+   CellTags->"MixError"]},
+ "MixError2"->{
+  Cell[1074211, 18295, 302, 6, 159, "Section",ExpressionUUID->"e8025eb7-3f35-4a90-8544-a8e7ccdf0723",
+   CellTags->"MixError2"]},
+ "PrivateError"->{
+  Cell[1237911, 21041, 334, 7, 141, "Section",ExpressionUUID->"794e53d6-9714-431f-b5b0-24e4c721a1e9",
+   CellTags->"PrivateError"]},
  "SlideShowHeader"->{
   Cell[580, 22, 4399, 98, 89, "SlideShowNavigationBar",ExpressionUUID->"3af37386-ae3d-4eb6-9fc0-08f15a96c0a4",
    CellTags->"SlideShowHeader"],
@@ -24709,49 +24739,25 @@ CellTagsIndex->{
    CellTags->"SlideShowHeader"],
   Cell[1237764, 21035, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"f96f154c-469a-49e4-9499-ffe767a82b9a",
    CellTags->"SlideShowHeader"],
-  Cell[1346388, 22874, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"293f6146-e87c-43d1-baeb-5e1a46d55565",
+  Cell[1346944, 22881, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"293f6146-e87c-43d1-baeb-5e1a46d55565",
    CellTags->"SlideShowHeader"]},
- "Index"->{
-  Cell[111395, 1905, 216, 3, 305, "Title",ExpressionUUID->"fee2d7ef-1786-4171-b76e-defdb15f8ade",
-   CellTags->"Index"]},
- "MainBibliografia"->{
-  Cell[118314, 2127, 234, 5, 159, "Section",ExpressionUUID->"81e3e906-16ad-466f-83ef-9d82593e0948",
-   CellTags->"MainBibliografia"]},
- "MainError"->{
-  Cell[227049, 3969, 302, 6, 159, "Section",ExpressionUUID->"75ae125d-b274-43a9-88ca-e04644dab30b",
-   CellTags->"MainError"]},
- "MatexError"->{
-  Cell[341044, 6020, 306, 7, 159, "Section",ExpressionUUID->"e2778065-d17f-43dc-a941-d98f109fe09e",
-   CellTags->"MatexError"]},
  "WolphramError"->{
   Cell[746453, 12773, 309, 7, 159, "Section",ExpressionUUID->"dc2979ad-5655-4f6b-b2c7-d2c6a5fffd64",
-   CellTags->"WolphramError"]},
- "MixError"->{
-  Cell[913969, 15614, 301, 6, 159, "Section",ExpressionUUID->"dd33eac3-8073-4aec-a68f-2cce04b14351",
-   CellTags->"MixError"]},
- "MixError2"->{
-  Cell[1074211, 18295, 302, 6, 159, "Section",ExpressionUUID->"e8025eb7-3f35-4a90-8544-a8e7ccdf0723",
-   CellTags->"MixError2"]},
- "PrivateError"->{
-  Cell[1237911, 21041, 334, 7, 159, "Section",ExpressionUUID->"794e53d6-9714-431f-b5b0-24e4c721a1e9",
-   CellTags->"PrivateError"]},
- "FutureWork"->{
-  Cell[1346535, 22880, 280, 6, 159, "Section",ExpressionUUID->"f4e897d9-3cd3-4805-9c4b-7ea2b2375f86",
-   CellTags->"FutureWork"]}
+   CellTags->"WolphramError"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"SlideShowHeader", 1454448, 24692},
- {"Index", 1455936, 24713},
- {"MainBibliografia", 1456081, 24716},
- {"MainError", 1456232, 24719},
- {"MatexError", 1456377, 24722},
- {"WolphramError", 1456526, 24725},
- {"MixError", 1456674, 24728},
- {"MixError2", 1456818, 24731},
- {"PrivateError", 1456967, 24734},
- {"FutureWork", 1457117, 24737}
+ {"FutureWork", 1454997, 24698},
+ {"Index", 1455140, 24701},
+ {"MainBibliografia", 1455285, 24704},
+ {"MainError", 1455436, 24707},
+ {"MatexError", 1455581, 24710},
+ {"MixError", 1455725, 24713},
+ {"MixError2", 1455869, 24716},
+ {"PrivateError", 1456018, 24719},
+ {"SlideShowHeader", 1456173, 24722},
+ {"WolphramError", 1457669, 24743}
  }
 *)
 (*NotebookFileOutline
@@ -24901,8 +24907,8 @@ Cell[CellGroupData[{
 Cell[1074211, 18295, 302, 6, 159, "Section",ExpressionUUID->"e8025eb7-3f35-4a90-8544-a8e7ccdf0723",
  CellTags->"MixError2"],
 Cell[CellGroupData[{
-Cell[1074538, 18305, 454, 8, 90, "Subsection",ExpressionUUID->"8b91e9c2-bb57-4472-8b74-2995631b0019"],
-Cell[1074995, 18315, 2621, 47, 623, "Text",ExpressionUUID->"97e6b377-b13d-46f6-af5b-ccba82d0db3d"],
+Cell[1074538, 18305, 454, 8, 82, "Subsection",ExpressionUUID->"8b91e9c2-bb57-4472-8b74-2995631b0019"],
+Cell[1074995, 18315, 2621, 47, 693, "Text",ExpressionUUID->"97e6b377-b13d-46f6-af5b-ccba82d0db3d"],
 Cell[CellGroupData[{
 Cell[1077641, 18366, 80342, 1334, 19, "Code",ExpressionUUID->"5ae10d0a-cb89-4c25-b8ee-3133aefe1d04",
  CellOpen->False],
@@ -24915,30 +24921,30 @@ Cell[CellGroupData[{
 Cell[1237764, 21035, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"f96f154c-469a-49e4-9499-ffe767a82b9a",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1237911, 21041, 334, 7, 159, "Section",ExpressionUUID->"794e53d6-9714-431f-b5b0-24e4c721a1e9",
+Cell[1237911, 21041, 334, 7, 141, "Section",ExpressionUUID->"794e53d6-9714-431f-b5b0-24e4c721a1e9",
  CellTags->"PrivateError"],
 Cell[CellGroupData[{
-Cell[1238270, 21052, 241, 4, 90, "Subsection",ExpressionUUID->"d6222cff-42c6-4ac6-ac7b-8251a5624d3e"],
-Cell[1238514, 21058, 1447, 39, 269, "Text",ExpressionUUID->"7c8bc8c8-794a-4bb5-b7b7-582970a976d7"],
+Cell[1238270, 21052, 241, 4, 82, "Subsection",ExpressionUUID->"d6222cff-42c6-4ac6-ac7b-8251a5624d3e"],
+Cell[1238514, 21058, 2003, 46, 409, "Text",ExpressionUUID->"7c8bc8c8-794a-4bb5-b7b7-582970a976d7"],
 Cell[CellGroupData[{
-Cell[1239986, 21101, 53451, 885, 19, "Code",ExpressionUUID->"135091ab-1c1e-440d-a1ca-389a397ab94b",
+Cell[1240542, 21108, 53451, 885, 19, "Code",ExpressionUUID->"135091ab-1c1e-440d-a1ca-389a397ab94b",
  CellOpen->False],
-Cell[1293440, 21988, 52878, 878, 135, "Output",ExpressionUUID->"682c02b4-a576-4fe6-aa9d-2c9faa69b69b"]
+Cell[1293996, 21995, 52878, 878, 135, "Output",ExpressionUUID->"682c02b4-a576-4fe6-aa9d-2c9faa69b69b"]
 }, {2}]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1346388, 22874, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"293f6146-e87c-43d1-baeb-5e1a46d55565",
+Cell[1346944, 22881, 122, 2, 88, "SlideShowNavigationBar",ExpressionUUID->"293f6146-e87c-43d1-baeb-5e1a46d55565",
  CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[1346535, 22880, 280, 6, 159, "Section",ExpressionUUID->"f4e897d9-3cd3-4805-9c4b-7ea2b2375f86",
+Cell[1347091, 22887, 280, 6, 141, "Section",ExpressionUUID->"f4e897d9-3cd3-4805-9c4b-7ea2b2375f86",
  CellTags->"FutureWork"],
-Cell[1346818, 22888, 1274, 21, 273, "Text",ExpressionUUID->"d29e6e25-b745-4499-bbc6-3092270e3bcc"],
+Cell[1347374, 22895, 1272, 20, 308, "Text",ExpressionUUID->"d29e6e25-b745-4499-bbc6-3092270e3bcc"],
 Cell[CellGroupData[{
-Cell[1348117, 22913, 53100, 882, 19, "Code",ExpressionUUID->"ee194325-94cb-4e34-885d-13744d486e5e",
+Cell[1348671, 22919, 53100, 882, 19, "Code",ExpressionUUID->"ee194325-94cb-4e34-885d-13744d486e5e",
  CellOpen->False],
-Cell[1401220, 23797, 52750, 876, 115, "Output",ExpressionUUID->"92926730-4c83-4fb7-adb1-f526276731ec"]
+Cell[1401774, 23803, 52750, 876, 115, "Output",ExpressionUUID->"92926730-4c83-4fb7-adb1-f526276731ec"]
 }, {2}]]
 }, Open  ]]
 }, Open  ]]
